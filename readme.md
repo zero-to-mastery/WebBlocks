@@ -1,75 +1,135 @@
-![Built With Stencil](https://img.shields.io/badge/-Built%20With%20Stencil-16161d.svg?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjIuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI%2BCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI%2BCgkuc3Qwe2ZpbGw6I0ZGRkZGRjt9Cjwvc3R5bGU%2BCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00MjQuNywzNzMuOWMwLDM3LjYtNTUuMSw2OC42LTkyLjcsNjguNkgxODAuNGMtMzcuOSwwLTkyLjctMzAuNy05Mi43LTY4LjZ2LTMuNmgzMzYuOVYzNzMuOXoiLz4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTQyNC43LDI5Mi4xSDE4MC40Yy0zNy42LDAtOTIuNy0zMS05Mi43LTY4LjZ2LTMuNkgzMzJjMzcuNiwwLDkyLjcsMzEsOTIuNyw2OC42VjI5Mi4xeiIvPgo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDI0LjcsMTQxLjdIODcuN3YtMy42YzAtMzcuNiw1NC44LTY4LjYsOTIuNy02OC42SDMzMmMzNy45LDAsOTIuNywzMC43LDkyLjcsNjguNlYxNDEuN3oiLz4KPC9zdmc%2BCg%3D%3D&colorA=16161d&style=flat-square)
+# Master The Event Loop
 
-# Stencil Component Starter
+## TL;DR
 
-This is a starter project for building a standalone Web Component using Stencil.
+#### [![](https://img.shields.io/badge/Html%20%26%20Javascript%20%26%20CSS%20PROJECT%20Powered%20by%20StencilJS-WebBlocks-00adb5?style=for-the-badge&logo=JavaScript)](https://github.com/r4pt0s/master_the_event_loop)
 
-Stencil is also great for building entire apps. For that, use the [stencil-app-starter](https://github.com/ionic-team/stencil-app-starter) instead.
+> There is a big hype about front-end frameworks all over the place. But what if we could build components without the need to reach out for big players like React,Vue and Angular?
+>
+> Turns out, this is a totally possible thing to do and it is quite easy using [StencilJs](https://stenciljs.com/docs/getting-started)
+>
+> Not only that we can build components which we can use in vanilla HTML, JS and CSS projects, but also creating components
+> which we can also reuse with frameworks like React, Vue and Angular.
+>
+> So the goal of this project is to exactly showcase that
 
-# Stencil
+## Work on the project locally
 
-Stencil is a compiler for building fast web apps using Web Components.
+In order to work and run the project locally you need NodeJs and npm installed on your system.
+Perform the following steps:
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.  Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+```
+ # HTTPS WAY
+ git clone https://github.com/zero-to-mastery/WebBlocks.git
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all.
+ # SSH WAY
+ git clone git@github.com:zero-to-mastery/WebBlocks.git
 
-## Getting Started
+ cd WebBlocks
 
-To start building a new web component using Stencil, clone this repo to a new directory:
-
-```bash
-git clone https://github.com/ionic-team/stencil-component-starter.git my-component
-cd my-component
-git remote rm origin
+ npm install
+ npm start
 ```
 
-and run:
+# Git Workflow
 
-```bash
-npm install
-npm start
-```
+## Fork first 🍴
 
-To build the component for production, run:
+We use the fork approach for collaboration. Fork the repository first and sync it with the original repository.
 
-```bash
-npm run build
-```
+### Steps to keep the local version up-to-date 🔄
 
-To run the unit tests for the components, run:
+#### Inital setup 🛫
 
-```bash
-npm test
-```
+- Clone your forked version
+  `git clone <UrlToTheForKedVersion>`
 
-Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
+- Update the remote Url in order to sync your fork with the original repo
 
+  `git remote add upstream https://github.com/zero-to-mastery/WebBlocks.git`
 
-## Naming Components
+  or by using ssh
 
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
+  `git remote add upstream git@github.com:zero-to-mastery/WebBlocks.git`
 
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
+- Verify that all urls are in place
+  `git remote -v`
+  this should give you a output like this
+  ```
+    origin          https://github.com/username/WebBlocks.git (fetch)
+    origin          https://github.com/username/WebBlocks.git (push)
+    upstream        https://github.com/zero-to-mastery/WebBlocks.git (fetch)
+    upstream        https://github.com/zero-to-mastery/WebBlocks.git (push)
+  ```
 
+#### Keep the local repository up-to-date & change into dev branch 🔄
 
-## Using this component
+Before starting to work on the files
 
-There are three strategies we recommend for using web components built with Stencil.
+- Get the latest version of the dev branch
+  `git pull upstream dev`
+- Get the latest version of the main branch
+  `git pull upstream main`
+- Make sure that you made your changes always in the dev branch.
+- Check in which branch you currently are
+  `git branch`
+  Then you will see something like this:
+  ```
+  * dev
+  main
+  ```
+- If you are not in the dev branch switch to the dev branch
+  `git checkout dev`
+- Start hacking 💻
 
-The first step for all three of these strategies is to [publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages).
+#### Keep the remote repository (forked version) up-to-date 🔄
 
-### Script tag
+- Get the latest version of the dev branch
+  `git pull upstream dev`
+- Get the latest version of the main branch
+  `git pull upstream main`
+- Push the new files to your forked version
+  `git push origin dev`
 
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/my-component.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+#### Creating PRs 🆕
 
-### Node Modules
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script src='node_modules/my-component/dist/my-component.esm.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+In order to tell us which changes you want to make or what awesome new component you want to share with the world in our project, push your changes to your fork to the **dev branch** and create a pull request to the original repository.
 
-### In a stencil-starter app
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
-- Then you can use the element anywhere in your template, JSX, html etc
+This makes sure that we always have a working and stable main branch after we tested your changes.
+If we made our tests and the **dev branch** is stable, we will merge the **dev branch** into the main branch without closing the **dev branch**.
+
+In order to make a PR on Github, follow this steps:
+
+- Add your files for staging with
+  `git add .` for adding all files or
+  `git add <path/to/filename>` for adding specific files
+- Commit your changes
+  `git commit -m "commit message"`
+- Push your changes to the forked version
+  `git push origin dev`
+- Move over to your github page and click on "Make pull request"
+
+## Where can I find the deployed version? 🤔
+
+This project hosts a deployed version right here on Github.
+
+On each merge into the main branch, the awesome Github Action [github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action) takes care of deploying the static files to the gh-pages branch.
+
+## Goal 🏁
+
+The goal of this project is, to the goal of this project is to showcase what we can do with web components and eventually to create a component library which we can host on npm.
+
+## Who we are?
+
+Our project team contains members from the [zero-to-mastery](https://zerotomastery.io) community.
+Everything started with the Frosty February Hackathon 2020.
+
+#### Project Lead/Maintainer
+
+> [![r4pt0s](https://avatars2.githubusercontent.com/u/29685827?s=200&v=4)](https://github.com/r4pt0s)
+
+#### Team Members and Contributers
+
+> Currently nobody 😱😱😱
+
+This project was bootstrapped with [StencilJs](https://stenciljs.com/docs/getting-started).
