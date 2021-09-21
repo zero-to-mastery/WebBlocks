@@ -1,6 +1,6 @@
 # WebBlocks
 
-![WebBlocks](/www/assets/img/facebook_cover_photo_2.png)
+![WebBlocks](https://github.com/zero-to-mastery/WebBlocks/blob/main/src/assets/img/facebook_cover_photo_2.png)
 
 ## TL;DR
 
