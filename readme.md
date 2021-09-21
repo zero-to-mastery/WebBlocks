@@ -1,4 +1,6 @@
-# Master The Event Loop
+# WebBlocks
+
+![WebBlocks](/www/assets/img/facebook_cover_photo_2.png)
 
 ## TL;DR
 
