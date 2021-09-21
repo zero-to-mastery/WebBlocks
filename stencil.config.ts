@@ -1,9 +1,16 @@
-import { Config, Env } from '@stencil/core';
+import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 const dev: boolean = process.argv && process.argv.indexOf('--dev') > -1;
-const apiEnv: string = dev ? 'dev' : 'prod';
-const copyObj = { copy: [{ src: './../dist/webblocks/webblocks.css', dest: 'build/webblocks.css' }] };
+const apiEnv: string = 'dev'; // dev ? 'dev' : 'prod';
+const copyObj = {
+  copy: [
+    { src: process.env.PWD + '/dist/webblocks/webblocks.css', dest: process.env.PWD + '/www/build/webblocks.css' },
+    { src: process.env.PWD + '/src/pages', dest: process.env.PWD + '/www/pages' },
+  ],
+};
+
+console.log(process.env.PWD);
 
 const shouldCopy = apiEnv === 'prod' ? {} : { ...copyObj };
 
