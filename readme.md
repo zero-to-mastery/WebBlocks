@@ -124,7 +124,7 @@ The goal of this project is, to the goal of this project is to showcase what we 
 ## Who we are?
 
 Our project team contains members from the [zero-to-mastery](https://zerotomastery.io) community.
-Everything started with the Frosty February Hackathon 2020.
+
 
 #### Project Lead/Maintainer
 
