@@ -15,6 +15,43 @@
 >
 > So the goal of this project is to exactly showcase that
 
+## How to contribute?
+
+Contribution can happen in more possible ways:
+
+1. Work on the `index.html` and/or the styles which are located in `src/global` for making the Website beautiful to look and work at
+2. Create new web components
+3. Add existing web components to the `index.html` file to show how they work (with code samples and by embedding them)
+4. Invent new subpages for better structuring of web component usage under `src/pages` (don't forget to link the subpages in the index.html file)
+
+## How to create a new web component the right way with StencilJs?
+
+Fortunately, Stencil ships with a pre-configured command for that.
+Just run
+
+```
+npm run generate
+```
+
+This will start a wizard where you can step-by-step configure your component (like the name, etc).
+
+Finally, your new directory structure gets created under `src/components/component-name` where `component-name` is the name which you have choosen in the component creation wizard.
+
+## I don't know typescript, do I have to use typescript in order to create new components?
+
+Although it totally is recommended to use typescript for various reasons, it is not a must have to contribute.
+If you are not familiar with typescript at all, just rename your files from
+
+```
+*.ts and *.tsx
+
+to
+
+*.js and *.jsx
+```
+
+This project makes use of `"checkJs": false` in the tsconig.json file which makes sure that nasty typescript errors do not fire up with common js and jsx files.
+
 ## Work on the project locally
 
 In order to work and run the project locally you need NodeJs and npm installed on your system.
@@ -124,7 +161,6 @@ The goal of this project is, to the goal of this project is to showcase what we 
 ## Who we are?
 
 Our project team contains members from the [zero-to-mastery](https://zerotomastery.io) community.
-
 
 #### Project Lead/Maintainer
 
