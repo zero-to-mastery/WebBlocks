@@ -2,17 +2,15 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 const dev: boolean = process.argv && process.argv.indexOf('--dev') > -1;
-const apiEnv: string = 'dev'; // dev ? 'dev' : 'prod';
+const apiEnv: string = dev ? 'dev' : 'prod';
 const copyObj = {
-  copy: [
-    { src: process.env.PWD + '/dist/webblocks/webblocks.css', dest: process.env.PWD + '/www/build/webblocks.css' },
-    { src: process.env.PWD + '/src/pages', dest: process.env.PWD + '/www/pages' },
-  ],
+  copy: [{ src: process.env.PWD + '/src/pages', dest: process.env.PWD + '/www/pages' }],
 };
 
-console.log(process.env.PWD);
-
-const shouldCopy = apiEnv === 'prod' ? {} : { ...copyObj };
+const shouldCopy =
+  apiEnv === 'prod'
+    ? { ...copyObj }
+    : { copy: [{ ...copyObj.copy[0] }, { src: process.env.PWD + '/dist/webblocks/webblocks.css', dest: process.env.PWD + '/www/build/webblocks.css' }] };
 
 export const config: Config = {
   namespace: 'webblocks',
