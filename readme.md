@@ -17,7 +17,7 @@
 
 ## Contributing
 
-Have a look at our [CONTRIBUTING.md](https://github.com/zero-to-mastery/WebBlocks/blob/master/CONTRIBUTING.md) file where we explain
+Have a look at our [CONTRIBUTING.md](https://github.com/zero-to-mastery/WebBlocks/blob/main/CONTRIBUTING.md) file where we explain
 
 - How to contribute?
 - Request new Web Components using Github's issues
@@ -43,7 +43,7 @@ Our project team contains members from the [zero-to-mastery](https://zerotomaste
 
 #### Project Lead/Maintainer
 
-> [![r4pt0s](https://avatars2.githubusercontent.com/u/29685827?s=200&v=4)](https://github.com/r4pt0s)
+> [![r4pt0s](https://avatars2.githubusercontent.com/u/29685827?s=100&v=4)](https://github.com/r4pt0s) [![tristian](https://avatars.githubusercontent.com/u/59102133?s=100&v=4)](https://github.com/IM-Deane/IM-Deane)
 
 #### Team Members and Contributers
 
