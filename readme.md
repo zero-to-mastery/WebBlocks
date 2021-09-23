@@ -2,9 +2,11 @@
 
 ![WebBlocks](https://github.com/zero-to-mastery/WebBlocks/blob/main/src/assets/img/facebook_cover_photo_2.png)
 
-## TL;DR
+#### ![](https://img.shields.io/badge/Html%20%26%20Javascript%20%26%20CSS%20PROJECT%20Powered%20by%20StencilJS-WebBlocks-00adb5?style=for-the-badge&logo=JavaScript)
 
-#### [![](https://img.shields.io/badge/Html%20%26%20Javascript%20%26%20CSS%20PROJECT%20Powered%20by%20StencilJS-WebBlocks-00adb5?style=for-the-badge&logo=JavaScript)](https://github.com/r4pt0s/master_the_event_loop)
+---
+
+## TL;DR
 
 > There is a big hype about front-end frameworks all over the place. But what if we could build components without the need to reach out for big players like React,Vue and Angular?
 >
@@ -14,6 +16,8 @@
 > which we can also reuse with frameworks like React, Vue and Angular.
 >
 > So the goal of this project is to exactly showcase that
+
+---
 
 ## Contributing
 
