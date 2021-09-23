@@ -14,7 +14,7 @@ describe('my-component', () => {
 
     await page.setContent('<my-component></my-component>');
     const component = await page.find('my-component');
-    const element = await page.find('my-component >>> div');
+    const element = await page.find('my-component >>> h1');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
     component.setProperty('first', 'James');
