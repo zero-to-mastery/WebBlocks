@@ -31,7 +31,13 @@ export class MyComponent {
     return format(this.first, this.middle, this.last);
   }
 
+  private returnJsx() {
+    const shouldChangeColor = this.color !== undefined;
+
+    return shouldChangeColor ? <h1 style={{ '--text-color': `${this.color}` }}>Hello, World! I'm {this.getText()}</h1> : <h1>Hello, World! I'm {this.getText()}</h1>;
+  }
+
   render() {
-    return <h1>Hello, World! I'm {this.getText()}</h1>;
+    return this.returnJsx();
   }
 }
