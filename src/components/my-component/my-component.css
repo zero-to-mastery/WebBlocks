@@ -2,4 +2,9 @@
   display: block;
   font-size: x-large;
   text-align: center;
+  --text-color: #1e1e1e;
+}
+
+h1 {
+  color: var(--text-color);
 }
