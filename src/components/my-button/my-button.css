@@ -1,0 +1,24 @@
+:host {
+  display: block;
+}
+
+.btn {
+  font: 600;
+  border: 1px solid black;
+  color: white;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+.btn-black {
+  background-color: black;
+}
+
+.btn-warning {
+  background-color: orange;
+}
+
+.btn-default {
+  background-color: lightblue;
+}
