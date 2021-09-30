@@ -150,7 +150,7 @@ In order to make a PR on Github, follow this steps:
 - Push your changes to the forked version
   `git push origin dev`
 - Move over to your github page and click on "Make pull request"
-
+- Let the world know that you made a awesome PR to a great open source project by sharing it on [Twitter](https://ctt.ac/foi8n)
 ## This project uses the MIT License
 
 When you submit code changes, your submissions are understood to be under the same MIT License that covers the project. Feel free to contact the maintainers if that's a concern.
