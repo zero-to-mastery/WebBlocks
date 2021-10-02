@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
+  interface ImageComponent {
+    srcDirJpg: string;
+    srcDirWebp: string;
+    srcImgName: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -26,16 +31,27 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
+  var HTMLImageComponentElement: {
+    prototype: HTMLImageComponentElement;
+    new (): HTMLImageComponentElement;
+  };
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'image-component': HTMLImageComponentElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 declare namespace LocalJSX {
+  interface ImageComponent {
+    srcDirJpg?: string;
+    srcDirWebp?: string;
+    srcImgName?: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -55,6 +71,7 @@ declare namespace LocalJSX {
     middle?: string;
   }
   interface IntrinsicElements {
+    'image-component': ImageComponent;
     'my-component': MyComponent;
   }
 }
@@ -62,6 +79,7 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }
