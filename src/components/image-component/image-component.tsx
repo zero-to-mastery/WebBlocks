@@ -2,6 +2,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'image-component',
+  styleUrl: 'image-component.css',
   shadow: true,
 })
 export class ImageComponent {
