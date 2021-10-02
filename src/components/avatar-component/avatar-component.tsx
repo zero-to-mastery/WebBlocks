@@ -29,7 +29,7 @@ export class AvatarComponent {
   @Prop() className: string;
 
   /**
-   * Custom class for the image
+   * Show title of the image on hover
    * @type {string}
    * @memberof AvatarComponent
    */

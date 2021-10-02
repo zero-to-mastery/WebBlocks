@@ -32,7 +32,7 @@ export namespace Components {
      */
     src: string;
     /**
-     * Custom class for the image
+     * Show title of the image on hover
      * @type {string}
      * @memberof AvatarComponent
      */
@@ -117,7 +117,7 @@ declare namespace LocalJSX {
      */
     src?: string;
     /**
-     * Custom class for the image
+     * Show title of the image on hover
      * @type {string}
      * @memberof AvatarComponent
      */
