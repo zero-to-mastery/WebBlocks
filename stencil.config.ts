@@ -33,7 +33,7 @@ export const config: Config = {
           This line is important in order to see changes in the index.html file immediately via hot reloading if changes happen in stylesheets
           without the need to re-build the entire thing
       */
-      ...shouldCopy,
+      // ...shouldCopy,
       serviceWorker: null, // disable service workers
     },
   ],
