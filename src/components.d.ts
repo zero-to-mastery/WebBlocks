@@ -7,9 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface ImageComponent {
-        "srcDirJpg": string;
-        "srcDirWebp": string;
+        "srcImg": string;
         "srcImgName": string;
+        "srcNextGen": string;
     }
     interface MyComponent {
         /**
@@ -50,9 +50,9 @@ declare global {
 }
 declare namespace LocalJSX {
     interface ImageComponent {
-        "srcDirJpg"?: string;
-        "srcDirWebp"?: string;
+        "srcImg"?: string;
         "srcImgName"?: string;
+        "srcNextGen"?: string;
     }
     interface MyComponent {
         /**

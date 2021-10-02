@@ -6,17 +6,17 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ImageComponent {
-  @Prop() srcDirJpg: string;
-  @Prop() srcDirWebp: string;
+  @Prop() srcImg: string;
+  @Prop() srcNextGen: string;
   @Prop() srcImgName: string;
 
   render() {
     return (
       <Host>
         <picture>
-          <source srcSet={this.srcDirWebp} type="image/webp" />
-          <source srcSet={this.srcDirJpg} type="image/jpeg" />
-          <img src={this.srcDirJpg} alt={this.srcImgName} />
+          <source srcSet={this.srcNextGen} />
+          <source srcSet={this.srcImg} type="image" />
+          <img src={this.srcImg} alt={this.srcImgName} />
         </picture>
       </Host>
     );
