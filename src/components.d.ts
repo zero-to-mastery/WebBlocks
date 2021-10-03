@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
+  interface ModalWindow {
+    cancelText: string;
+    confirmText: string;
+    pointerEvents: boolean;
+    title: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -26,16 +32,28 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
+  var HTMLModalWindowElement: {
+    prototype: HTMLModalWindowElement;
+    new (): HTMLModalWindowElement;
+  };
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'modal-window': HTMLModalWindowElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 declare namespace LocalJSX {
+  interface ModalWindow {
+    cancelText?: string;
+    confirmText?: string;
+    pointerEvents?: boolean;
+    title?: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -55,6 +73,7 @@ declare namespace LocalJSX {
     middle?: string;
   }
   interface IntrinsicElements {
+    'modal-window': ModalWindow;
     'my-component': MyComponent;
   }
 }
@@ -62,6 +81,7 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }
