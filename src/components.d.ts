@@ -45,9 +45,9 @@ export namespace Components {
     variant: 'circular' | 'rounded' | 'square';
   }
   interface ImageComponent {
-    srcDirJpg: string;
-    srcDirWebp: string;
+    srcImg: string;
     srcImgName: string;
+    srcNextGen: string;
   }
   interface MyComponent {
     /**
@@ -130,9 +130,9 @@ declare namespace LocalJSX {
     variant?: 'circular' | 'rounded' | 'square';
   }
   interface ImageComponent {
-    srcDirJpg?: string;
-    srcDirWebp?: string;
+    srcImg?: string;
     srcImgName?: string;
+    srcNextGen?: string;
   }
   interface MyComponent {
     /**
