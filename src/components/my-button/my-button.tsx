@@ -10,31 +10,33 @@ export class MyButton {
   @Prop() type: string;
   @Prop() width: string;
   @Prop() typeButtton: string;
+  @Prop() color: string;
+  @Prop() icon: string;
 
   render() {
     switch (this.typeButtton) {
       case 'primary':
         return (
           <Host>
-            <button class="btn btn-primary" style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
+            <button color={this.color} class={`btn btn-primary ${this.icon}`} style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
           </Host>
         );
       case 'warning':
         return (
           <Host>
-            <button class="btn btn-warning" style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
+            <button color={this.color} class={`btn btn-warning ${this.icon}`} style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
           </Host>
         );
       case 'black':
         return (
           <Host>
-            <button class="btn btn-black" style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
+            <button color={this.color} class={`btn btn-black ${this.icon}`} style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
           </Host>
         );
       default:
         return (
           <Host>
-            <button class="btn btn-default" style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
+            <button color={this.color} class={`btn btn-default ${this.icon}`} style={{ width: this.width, height: 'auto' }} name={this.name} type={this.type}></button>
           </Host>
         );
     }
