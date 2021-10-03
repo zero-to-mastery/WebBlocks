@@ -44,10 +44,16 @@ export namespace Components {
      */
     variant: 'circular' | 'rounded' | 'square';
   }
+  interface GoogleTagManager {
+    /**
+     * The google tag manage container ID
+     */
+    containerId: string;
+  }
   interface ImageComponent {
-    srcDirJpg: string;
-    srcDirWebp: string;
+    srcImg: string;
     srcImgName: string;
+    srcNextGen: string;
   }
   interface MyComponent {
     /**
@@ -74,6 +80,11 @@ declare global {
     prototype: HTMLAvatarComponentElement;
     new (): HTMLAvatarComponentElement;
   };
+  interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
+  var HTMLGoogleTagManagerElement: {
+    prototype: HTMLGoogleTagManagerElement;
+    new (): HTMLGoogleTagManagerElement;
+  };
   interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
   var HTMLImageComponentElement: {
     prototype: HTMLImageComponentElement;
@@ -86,6 +97,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'avatar-component': HTMLAvatarComponentElement;
+    'google-tag-manager': HTMLGoogleTagManagerElement;
     'image-component': HTMLImageComponentElement;
     'my-component': HTMLMyComponentElement;
   }
@@ -129,10 +141,16 @@ declare namespace LocalJSX {
      */
     variant?: 'circular' | 'rounded' | 'square';
   }
+  interface GoogleTagManager {
+    /**
+     * The google tag manage container ID
+     */
+    containerId?: string;
+  }
   interface ImageComponent {
-    srcDirJpg?: string;
-    srcDirWebp?: string;
+    srcImg?: string;
     srcImgName?: string;
+    srcNextGen?: string;
   }
   interface MyComponent {
     /**
@@ -154,6 +172,7 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     'avatar-component': AvatarComponent;
+    'google-tag-manager': GoogleTagManager;
     'image-component': ImageComponent;
     'my-component': MyComponent;
   }
@@ -163,6 +182,7 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+      'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
