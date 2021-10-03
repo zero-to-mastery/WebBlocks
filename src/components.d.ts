@@ -6,11 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
-  interface ModalWindow {
-    cancelText: string;
-    confirmText: string;
-    pointerEvents: boolean;
-    title: string;
+  interface ImageComponent {
+    srcImg: string;
+    srcImgName: string;
+    srcNextGen: string;
   }
   interface MyComponent {
     /**
@@ -32,10 +31,10 @@ export namespace Components {
   }
 }
 declare global {
-  interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
-  var HTMLModalWindowElement: {
-    prototype: HTMLModalWindowElement;
-    new (): HTMLModalWindowElement;
+  interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
+  var HTMLImageComponentElement: {
+    prototype: HTMLImageComponentElement;
+    new (): HTMLImageComponentElement;
   };
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -43,16 +42,15 @@ declare global {
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
-    'modal-window': HTMLModalWindowElement;
+    'image-component': HTMLImageComponentElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 declare namespace LocalJSX {
-  interface ModalWindow {
-    cancelText?: string;
-    confirmText?: string;
-    pointerEvents?: boolean;
-    title?: string;
+  interface ImageComponent {
+    srcImg?: string;
+    srcImgName?: string;
+    srcNextGen?: string;
   }
   interface MyComponent {
     /**
@@ -73,7 +71,7 @@ declare namespace LocalJSX {
     middle?: string;
   }
   interface IntrinsicElements {
-    'modal-window': ModalWindow;
+    'image-component': ImageComponent;
     'my-component': MyComponent;
   }
 }
@@ -81,7 +79,7 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
-      'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
+      'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }
