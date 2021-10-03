@@ -12,7 +12,7 @@ export class MyButton {
   @Prop() typeButtton: string;
   @Prop() color: string;
   @Prop() icon: string;
-
+  // Render stuff
   render() {
     switch (this.typeButtton) {
       case 'primary':
