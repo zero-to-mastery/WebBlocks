@@ -49,6 +49,20 @@ export namespace Components {
     srcImgName: string;
     srcNextGen: string;
   }
+  interface ModalWindow {
+    cancelText: string;
+    confirmText: string;
+    pointerEvents: boolean;
+    title: string;
+  }
+  interface MyButton {
+    color: string;
+    icon: string;
+    name: string;
+    type: string;
+    typeButtton: string;
+    width: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -67,6 +81,28 @@ export namespace Components {
      */
     middle: string;
   }
+  interface TooltipComponent {
+    /**
+     * Background color
+     */
+    backgroundColor: string;
+    /**
+     * Text color
+     */
+    color: string;
+    /**
+     * Font size
+     */
+    fontSize: string;
+    /**
+     * Position of tooltip. left, right, top, bottom
+     */
+    position: string;
+    /**
+     * Text to be displayed in the tooltip
+     */
+    text: string;
+  }
 }
 declare global {
   interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {}
@@ -79,15 +115,33 @@ declare global {
     prototype: HTMLImageComponentElement;
     new (): HTMLImageComponentElement;
   };
+  interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
+  var HTMLModalWindowElement: {
+    prototype: HTMLModalWindowElement;
+    new (): HTMLModalWindowElement;
+  };
+  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
+  };
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+  interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {}
+  var HTMLTooltipComponentElement: {
+    prototype: HTMLTooltipComponentElement;
+    new (): HTMLTooltipComponentElement;
+  };
   interface HTMLElementTagNameMap {
     'avatar-component': HTMLAvatarComponentElement;
     'image-component': HTMLImageComponentElement;
+    'modal-window': HTMLModalWindowElement;
+    'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
+    'tooltip-component': HTMLTooltipComponentElement;
   }
 }
 declare namespace LocalJSX {
@@ -134,6 +188,20 @@ declare namespace LocalJSX {
     srcImgName?: string;
     srcNextGen?: string;
   }
+  interface ModalWindow {
+    cancelText?: string;
+    confirmText?: string;
+    pointerEvents?: boolean;
+    title?: string;
+  }
+  interface MyButton {
+    color?: string;
+    icon?: string;
+    name?: string;
+    type?: string;
+    typeButtton?: string;
+    width?: string;
+  }
   interface MyComponent {
     /**
      * The text color
@@ -152,10 +220,35 @@ declare namespace LocalJSX {
      */
     middle?: string;
   }
+  interface TooltipComponent {
+    /**
+     * Background color
+     */
+    backgroundColor?: string;
+    /**
+     * Text color
+     */
+    color?: string;
+    /**
+     * Font size
+     */
+    fontSize?: string;
+    /**
+     * Position of tooltip. left, right, top, bottom
+     */
+    position?: string;
+    /**
+     * Text to be displayed in the tooltip
+     */
+    text?: string;
+  }
   interface IntrinsicElements {
     'avatar-component': AvatarComponent;
     'image-component': ImageComponent;
+    'modal-window': ModalWindow;
+    'my-button': MyButton;
     'my-component': MyComponent;
+    'tooltip-component': TooltipComponent;
   }
 }
 export { LocalJSX as JSX };
@@ -164,7 +257,10 @@ declare module '@stencil/core' {
     interface IntrinsicElements {
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
+      'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
+      'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'tooltip-component': LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
     }
   }
 }
