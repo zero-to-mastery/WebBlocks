@@ -1,8 +1,3 @@
-
----
-> ⚠   **NOTE:**  Hacktoberfest officially starts on October 1st - This project will remain archived until then!
----
-
 # WebBlocks
 
 ![WebBlocks](https://github.com/zero-to-mastery/WebBlocks/blob/main/src/assets/img/facebook_cover_photo_2.png)
