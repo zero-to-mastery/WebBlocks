@@ -26,14 +26,14 @@ export class AvatarComponent {
    * @type {string}
    * @memberof AvatarComponent
    */
-  @Prop() classes: string;
+  @Prop() className: string;
 
   /**
    * Show title of the image on hover
    * @type {string}
    * @memberof AvatarComponent
    */
-  @Prop() imgTitle: string;
+  @Prop() title: string;
 
   /**
    * Avatar image size
@@ -51,12 +51,12 @@ export class AvatarComponent {
   @Prop() variant: 'circular' | 'rounded' | 'square' = 'rounded';
 
   render() {
-    const className = `avatar${this.classes ? ' ' + this.classes : ''} ${this.size} ${this.variant}`;
+    const className = `avatar${this.className ? ' ' + this.className : ''} ${this.size} ${this.variant}`;
     const avatar =
       this.src || (!this.src && !this.alt) ? (
-        <img class={className} src={this.src ?? 'assets/img/user_fallback_img.svg'} alt={this.alt} title={this.imgTitle} />
+        <img class={className} src={this.src ?? 'assets/img/user_fallback_img.svg'} alt={this.alt} title={this.title} />
       ) : (
-        <div class={`${className} initials-text default-color`} title={this.imgTitle}>
+        <div class={`${className} initials-text default-color`} title={this.title}>
           {this.alt[0].toUpperCase()}
         </div>
       );
