@@ -39,6 +39,7 @@ export namespace Components {
     bordered: boolean;
     defaultValue: string;
     disabled: boolean;
+    pattern: string;
     placeholder: string;
     size: string;
   }
@@ -105,6 +106,7 @@ declare namespace LocalJSX {
     bordered?: boolean;
     defaultValue?: string;
     disabled?: boolean;
+    pattern?: string;
     placeholder?: string;
     size?: string;
   }
