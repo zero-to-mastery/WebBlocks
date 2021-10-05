@@ -13,12 +13,26 @@
   </head>
   <body>
     <header>
-      <img src="assets/img/linkedin_banner_image_1.png" alt="WebBlocks" />
+      <div style="text-align: center">
+        <img src="assets/img/linkedin_banner_image_1.png" style="max-width: 100%" />
+      </div>
     </header>
     <main>
       <a href="pages/test.html">blabla</a>
       <section>
         <my-component first="Let's start with" last="WEB COMPONENTS" color="#ff0000"></my-component>
+        <my-button width="100px" typeButtton="black">My Button</my-button>
+      </section>
+
+      <section>
+        <modal-window title="Title Here" confirm-text="Confirm" cancel-text="Cancel" pointer-events="false">
+          <p>Content here</p>
+        </modal-window>
+      </section>
+      <section>
+        <avatar-component title="Avatar" src="https://i.pravatar.cc/150" alt="Random Avatar" variant="circular" size="medium"></avatar-component>
+      </section>
+      <section>
         <my-input placeholder="Input North American phone number" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" size="large"> </my-input>
         <my-input placeholder="Input International phone number" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" size="large"> </my-input>
       </section>

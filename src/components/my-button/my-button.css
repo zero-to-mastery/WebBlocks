@@ -1,0 +1,26 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+:host {
+  display: block;
+}
+
+.btn {
+  font: 600;
+  border: 1px solid black;
+  color: white;
+}
+
+.btn-primary {
+  background-color: blue;
+}
+.btn-black {
+  background-color: black;
+}
+
+.btn-warning {
+  background-color: orange;
+}
+
+.btn-default {
+  background-color: lightblue;
+}

@@ -6,6 +6,44 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
+  interface AvatarComponent {
+    /**
+     * Alternate text when src image breaks
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    alt: string;
+    /**
+     * Custom class for the image
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    className: string;
+    /**
+     * Avatar image size
+     * @type {('small' | 'medium' | 'large')}
+     * @memberof AvatarComponent
+     */
+    size: 'small' | 'medium' | 'large';
+    /**
+     * Image source url
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    src: string;
+    /**
+     * Show title of the image on hover
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    title: string;
+    /**
+     * Avatar image shape variants
+     * @type {('circular' | 'rounded' | 'square')}
+     * @memberof AvatarComponent
+     */
+    variant: 'circular' | 'rounded' | 'square';
+  }
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -16,6 +54,20 @@ export namespace Components {
     srcImg: string;
     srcImgName: string;
     srcNextGen: string;
+  }
+  interface ModalWindow {
+    cancelText: string;
+    confirmText: string;
+    pointerEvents: boolean;
+    title: string;
+  }
+  interface MyButton {
+    color: string;
+    icon: string;
+    name: string;
+    type: string;
+    typeButtton: string;
+    width: string;
   }
   interface MyComponent {
     /**
@@ -43,8 +95,35 @@ export namespace Components {
     placeholder: string;
     size: string;
   }
+  interface TooltipComponent {
+    /**
+     * Background color
+     */
+    backgroundColor: string;
+    /**
+     * Text color
+     */
+    color: string;
+    /**
+     * Font size
+     */
+    fontSize: string;
+    /**
+     * Position of tooltip. left, right, top, bottom
+     */
+    position: string;
+    /**
+     * Text to be displayed in the tooltip
+     */
+    text: string;
+  }
 }
 declare global {
+  interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {}
+  var HTMLAvatarComponentElement: {
+    prototype: HTMLAvatarComponentElement;
+    new (): HTMLAvatarComponentElement;
+  };
   interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
   var HTMLGoogleTagManagerElement: {
     prototype: HTMLGoogleTagManagerElement;
@@ -54,6 +133,16 @@ declare global {
   var HTMLImageComponentElement: {
     prototype: HTMLImageComponentElement;
     new (): HTMLImageComponentElement;
+  };
+  interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
+  var HTMLModalWindowElement: {
+    prototype: HTMLModalWindowElement;
+    new (): HTMLModalWindowElement;
+  };
+  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
   };
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -65,14 +154,61 @@ declare global {
     prototype: HTMLMyInputElement;
     new (): HTMLMyInputElement;
   };
+  interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {}
+  var HTMLTooltipComponentElement: {
+    prototype: HTMLTooltipComponentElement;
+    new (): HTMLTooltipComponentElement;
+  };
   interface HTMLElementTagNameMap {
+    'avatar-component': HTMLAvatarComponentElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
     'image-component': HTMLImageComponentElement;
+    'modal-window': HTMLModalWindowElement;
+    'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
     'my-input': HTMLMyInputElement;
+    'tooltip-component': HTMLTooltipComponentElement;
   }
 }
 declare namespace LocalJSX {
+  interface AvatarComponent {
+    /**
+     * Alternate text when src image breaks
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    alt?: string;
+    /**
+     * Custom class for the image
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    className?: string;
+    /**
+     * Avatar image size
+     * @type {('small' | 'medium' | 'large')}
+     * @memberof AvatarComponent
+     */
+    size?: 'small' | 'medium' | 'large';
+    /**
+     * Image source url
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    src?: string;
+    /**
+     * Show title of the image on hover
+     * @type {string}
+     * @memberof AvatarComponent
+     */
+    title?: string;
+    /**
+     * Avatar image shape variants
+     * @type {('circular' | 'rounded' | 'square')}
+     * @memberof AvatarComponent
+     */
+    variant?: 'circular' | 'rounded' | 'square';
+  }
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -83,6 +219,20 @@ declare namespace LocalJSX {
     srcImg?: string;
     srcImgName?: string;
     srcNextGen?: string;
+  }
+  interface ModalWindow {
+    cancelText?: string;
+    confirmText?: string;
+    pointerEvents?: boolean;
+    title?: string;
+  }
+  interface MyButton {
+    color?: string;
+    icon?: string;
+    name?: string;
+    type?: string;
+    typeButtton?: string;
+    width?: string;
   }
   interface MyComponent {
     /**
@@ -110,21 +260,51 @@ declare namespace LocalJSX {
     placeholder?: string;
     size?: string;
   }
+  interface TooltipComponent {
+    /**
+     * Background color
+     */
+    backgroundColor?: string;
+    /**
+     * Text color
+     */
+    color?: string;
+    /**
+     * Font size
+     */
+    fontSize?: string;
+    /**
+     * Position of tooltip. left, right, top, bottom
+     */
+    position?: string;
+    /**
+     * Text to be displayed in the tooltip
+     */
+    text?: string;
+  }
   interface IntrinsicElements {
+    'avatar-component': AvatarComponent;
     'google-tag-manager': GoogleTagManager;
     'image-component': ImageComponent;
+    'modal-window': ModalWindow;
+    'my-button': MyButton;
     'my-component': MyComponent;
     'my-input': MyInput;
+    'tooltip-component': TooltipComponent;
   }
 }
 export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
+      'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
+      'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
       'my-input': LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+      'tooltip-component': LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
     }
   }
 }
