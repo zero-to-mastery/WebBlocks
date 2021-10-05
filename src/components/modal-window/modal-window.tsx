@@ -6,7 +6,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ModalWindow {
-  @Prop() title: string;
+  @Prop() modalTitle: string;
   @Prop() confirmText: string;
   @Prop() cancelText: string;
   @Prop() pointerEvents: boolean;
@@ -15,7 +15,7 @@ export class ModalWindow {
     return (
       <Host>
         <div class="modal-window">
-          <div class="modal-title">{this.title}</div>
+          <div class="modal-title">{this.modalTitle}</div>
           <slot></slot>
           <div class="modal-btns">
             <button class="modal-cancel-btn modal-btn">{this.cancelText}</button>
