@@ -44,6 +44,19 @@ export namespace Components {
      */
     variant: 'circular' | 'rounded' | 'square';
   }
+  interface GoogleTagManager {
+    /**
+     * The google tag manage container ID
+     */
+    containerId: string;
+  }
+  interface HeroComponent {
+    background: string;
+    heading: string;
+    height: string;
+    imgurl: string;
+    width: string;
+  }
   interface ImageComponent {
     srcImg: string;
     srcImgName: string;
@@ -110,6 +123,16 @@ declare global {
     prototype: HTMLAvatarComponentElement;
     new (): HTMLAvatarComponentElement;
   };
+  interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
+  var HTMLGoogleTagManagerElement: {
+    prototype: HTMLGoogleTagManagerElement;
+    new (): HTMLGoogleTagManagerElement;
+  };
+  interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {}
+  var HTMLHeroComponentElement: {
+    prototype: HTMLHeroComponentElement;
+    new (): HTMLHeroComponentElement;
+  };
   interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
   var HTMLImageComponentElement: {
     prototype: HTMLImageComponentElement;
@@ -137,6 +160,8 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'avatar-component': HTMLAvatarComponentElement;
+    'google-tag-manager': HTMLGoogleTagManagerElement;
+    'hero-component': HTMLHeroComponentElement;
     'image-component': HTMLImageComponentElement;
     'modal-window': HTMLModalWindowElement;
     'my-button': HTMLMyButtonElement;
@@ -182,6 +207,19 @@ declare namespace LocalJSX {
      * @memberof AvatarComponent
      */
     variant?: 'circular' | 'rounded' | 'square';
+  }
+  interface GoogleTagManager {
+    /**
+     * The google tag manage container ID
+     */
+    containerId?: string;
+  }
+  interface HeroComponent {
+    background?: string;
+    heading?: string;
+    height?: string;
+    imgurl?: string;
+    width?: string;
   }
   interface ImageComponent {
     srcImg?: string;
@@ -244,6 +282,8 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     'avatar-component': AvatarComponent;
+    'google-tag-manager': GoogleTagManager;
+    'hero-component': HeroComponent;
     'image-component': ImageComponent;
     'modal-window': ModalWindow;
     'my-button': MyButton;
@@ -256,6 +296,8 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+      'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+      'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
       'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
