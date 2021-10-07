@@ -247,7 +247,6 @@ declare namespace LocalJSX {
   interface EmojiCheckboxComponent {
     checked?: boolean;
     name?: string;
-    onOnChange?: (event: CustomEvent<{ value: boolean; name: string }>) => void;
   }
   interface GoogleTagManager {
     /**

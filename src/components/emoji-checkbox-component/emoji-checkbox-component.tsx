@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Event, EventEmitter, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'emoji-checkbox-component',
@@ -8,15 +8,10 @@ import { Component, Host, h, Prop, Event, EventEmitter, Element } from '@stencil
 export class EmojiCheckboxComponent {
   @Prop({ mutable: true }) checked: boolean = false;
   @Prop() name: string;
-  @Event() onChange: EventEmitter<{ value: boolean; name: string }>;
   @Element() el: HTMLElement;
 
   handleClick = () => {
     this.checked = !this.checked;
-    this.onChange.emit({
-      name: this.name,
-      value: this.checked,
-    });
     this.el.childNodes.forEach(element => {
       element['checked'] = this.checked;
     });
