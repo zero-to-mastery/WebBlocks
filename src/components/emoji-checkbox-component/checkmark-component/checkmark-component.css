@@ -4,13 +4,6 @@
   display: inline-block;
 }
 
-span.check-true::after,
-span.check-false::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 span.check-true::after {
   content: var(--checkTrue);
 }
