@@ -6,6 +6,9 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class LabelComponent {
+  /**
+   * Checkbox state
+   */
   @Prop() checked: boolean = false;
 
   render() {

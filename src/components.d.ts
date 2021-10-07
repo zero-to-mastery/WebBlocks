@@ -45,12 +45,27 @@ export namespace Components {
     variant: 'circular' | 'rounded' | 'square';
   }
   interface CheckmarkComponent {
+    /**
+     * Un-checked state emoji code
+     */
     checkFalse: string;
+    /**
+     * Checked state emoji code
+     */
     checkTrue: string;
+    /**
+     * Checkbox state
+     */
     checked: boolean;
   }
   interface EmojiCheckboxComponent {
+    /**
+     * The initial state of checkbox
+     */
     checked: boolean;
+    /**
+     * Checkbox name
+     */
     name: string;
   }
   interface GoogleTagManager {
@@ -65,6 +80,9 @@ export namespace Components {
     srcNextGen: string;
   }
   interface LabelComponent {
+    /**
+     * Checkbox state
+     */
     checked: boolean;
   }
   interface ModalWindow {
@@ -240,12 +258,27 @@ declare namespace LocalJSX {
     variant?: 'circular' | 'rounded' | 'square';
   }
   interface CheckmarkComponent {
+    /**
+     * Un-checked state emoji code
+     */
     checkFalse?: string;
+    /**
+     * Checked state emoji code
+     */
     checkTrue?: string;
+    /**
+     * Checkbox state
+     */
     checked?: boolean;
   }
   interface EmojiCheckboxComponent {
+    /**
+     * The initial state of checkbox
+     */
     checked?: boolean;
+    /**
+     * Checkbox name
+     */
     name?: string;
   }
   interface GoogleTagManager {
@@ -260,6 +293,9 @@ declare namespace LocalJSX {
     srcNextGen?: string;
   }
   interface LabelComponent {
+    /**
+     * Checkbox state
+     */
     checked?: boolean;
   }
   interface ModalWindow {

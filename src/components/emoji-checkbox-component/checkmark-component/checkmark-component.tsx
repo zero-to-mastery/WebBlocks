@@ -6,12 +6,25 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
   shadow: true,
 })
 export class CheckmarkComponent {
+  /**
+   * Checked state emoji code
+   */
   @Prop() checkTrue: string;
+  /**
+   * Un-checked state emoji code
+   */
   @Prop() checkFalse: string;
+  /**
+   * Checkbox state
+   */
   @Prop() checked: boolean = false;
+  /**
+   * Root element
+   */
   @Element() el: HTMLElement;
 
   componentDidLoad() {
+    // set emoji codes as css custom properties
     this.el.style.setProperty('--checkTrue', `"${this.checkTrue}"`);
     this.el.style.setProperty('--checkFalse', `"${this.checkFalse}"`);
   }
