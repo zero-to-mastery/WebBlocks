@@ -87,6 +87,14 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface MyInput {
+        "bordered": boolean;
+        "defaultValue": string;
+        "disabled": boolean;
+        "pattern": string;
+        "placeholder": string;
+        "size": string;
+    }
     interface TooltipComponent {
         /**
           * Background color
@@ -147,6 +155,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {
+    }
+    var HTMLMyInputElement: {
+        prototype: HTMLMyInputElement;
+        new (): HTMLMyInputElement;
+    };
     interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {
     }
     var HTMLTooltipComponentElement: {
@@ -160,6 +174,7 @@ declare global {
         "modal-window": HTMLModalWindowElement;
         "my-button": HTMLMyButtonElement;
         "my-component": HTMLMyComponentElement;
+        "my-input": HTMLMyInputElement;
         "tooltip-component": HTMLTooltipComponentElement;
     }
 }
@@ -245,6 +260,14 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface MyInput {
+        "bordered"?: boolean;
+        "defaultValue"?: string;
+        "disabled"?: boolean;
+        "pattern"?: string;
+        "placeholder"?: string;
+        "size"?: string;
+    }
     interface TooltipComponent {
         /**
           * Background color
@@ -274,6 +297,7 @@ declare namespace LocalJSX {
         "modal-window": ModalWindow;
         "my-button": MyButton;
         "my-component": MyComponent;
+        "my-input": MyInput;
         "tooltip-component": TooltipComponent;
     }
 }
@@ -287,6 +311,7 @@ declare module "@stencil/core" {
             "modal-window": LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
             "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
             "tooltip-component": LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
         }
     }
