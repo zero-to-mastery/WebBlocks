@@ -108,11 +108,9 @@ We use the fork approach for collaboration. Fork the repository first and sync i
 
 Before starting to work on the files
 
-- Get the latest version of the dev branch
-  `git pull upstream dev`
 - Get the latest version of the main branch
   `git pull upstream main`
-- Make sure that you made your changes always in the dev branch.
+- Make sure that you make your changes always in the dev branch.
 - Check in which branch you currently are
   `git branch`
   Then you will see something like this:
@@ -121,12 +119,16 @@ Before starting to work on the files
   main
   ```
 - If you are not in the dev branch switch to the dev branch
-  `git checkout dev`
+  `git checkout --track origin/dev`  
+  _\* Next times you run this you can use `git checkout dev`.
+  The `--track` flag and the remote name are only needed for the first checkout._
+- Get the latest version of the dev branch
+  `git pull upstream dev`
 - Start hacking 💻
 
 #### Keep the remote repository (forked version) up-to-date 🔄
 
-- Get the latest version of the dev branch
+- Get the latest version of the dev branch (confirm that you're on the `dev` branch first)
   `git pull upstream dev`
 - Get the latest version of the main branch
   `git pull upstream main`
@@ -151,6 +153,7 @@ In order to make a PR on Github, follow this steps:
   `git push origin dev`
 - Move over to your github page and click on "Make pull request"
 - Let the world know that you made a awesome PR to a great open source project by sharing it on [Twitter](https://ctt.ac/foi8n)
+
 ## This project uses the MIT License
 
 When you submit code changes, your submissions are understood to be under the same MIT License that covers the project. Feel free to contact the maintainers if that's a concern.
