@@ -1,0 +1,76 @@
+$errorTextColor: #936463;
+$errorIconColor: #f0625f;
+$errorColorBg: #fdeded;
+
+$warningTextColor: #947f63;
+$warningIconColor: #ffa117;
+$warningColorBg: #fff4e5;
+
+$successTextColor: #2a502c;
+$successIconColor: #45c549;
+$successColorBg: #edf7ed;
+
+@mixin svgBg($color) {
+  polygon,
+  line,
+  circle,
+  path {
+    stroke: $color;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+
+  svg,
+  img {
+    width: 20px;
+    margin-right: 0.6rem;
+  }
+}
+
+.error {
+  background-color: $errorColorBg;
+  color: $errorTextColor;
+  @include svgBg($errorIconColor);
+}
+
+.warning {
+  background-color: $warningColorBg;
+  color: $warningTextColor;
+  @include svgBg($warningIconColor);
+}
+
+.success {
+  background-color: $successColorBg;
+  color: $successTextColor;
+  @include svgBg($successIconColor);
+}
+
+.info {
+  background-color: #e5f6fd;
+  color: #4f8096;
+  @include svgBg(#4f8096);
+}
+
+.error-outline {
+  border: 3px solid darken($errorColorBg, 10%);
+  color: $warningTextColor;
+  @include svgBg($warningIconColor);
+}
+
+.success-outline {
+}
+.warning-outline {
+}
+.info-outline {
+}

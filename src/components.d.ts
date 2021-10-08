@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AlertComponent {
+        "icon": string;
+        "text": string;
+        "variant": string;
+    }
     interface AvatarComponent {
         /**
           * Alternate text when src image breaks
@@ -119,6 +124,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAlertComponentElement extends Components.AlertComponent, HTMLStencilElement {
+    }
+    var HTMLAlertComponentElement: {
+        prototype: HTMLAlertComponentElement;
+        new (): HTMLAlertComponentElement;
+    };
     interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {
     }
     var HTMLAvatarComponentElement: {
@@ -168,6 +179,7 @@ declare global {
         new (): HTMLTooltipComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "alert-component": HTMLAlertComponentElement;
         "avatar-component": HTMLAvatarComponentElement;
         "google-tag-manager": HTMLGoogleTagManagerElement;
         "image-component": HTMLImageComponentElement;
@@ -179,6 +191,11 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AlertComponent {
+        "icon"?: string;
+        "text"?: string;
+        "variant"?: string;
+    }
     interface AvatarComponent {
         /**
           * Alternate text when src image breaks
@@ -291,6 +308,7 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface IntrinsicElements {
+        "alert-component": AlertComponent;
         "avatar-component": AvatarComponent;
         "google-tag-manager": GoogleTagManager;
         "image-component": ImageComponent;
@@ -305,6 +323,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "alert-component": LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
             "avatar-component": LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
             "google-tag-manager": LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
             "image-component": LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
