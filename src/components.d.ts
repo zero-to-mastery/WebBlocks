@@ -44,6 +44,30 @@ export namespace Components {
      */
     variant: 'circular' | 'rounded' | 'square';
   }
+  interface CheckmarkComponent {
+    /**
+     * Un-checked state emoji code
+     */
+    checkFalse: string;
+    /**
+     * Checked state emoji code
+     */
+    checkTrue: string;
+    /**
+     * Checkbox state
+     */
+    checked: boolean;
+  }
+  interface EmojiCheckboxComponent {
+    /**
+     * The initial state of checkbox
+     */
+    checked: boolean;
+    /**
+     * Checkbox name
+     */
+    name: string;
+  }
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -54,6 +78,12 @@ export namespace Components {
     srcImg: string;
     srcImgName: string;
     srcNextGen: string;
+  }
+  interface LabelComponent {
+    /**
+     * Checkbox state
+     */
+    checked: boolean;
   }
   interface ModalWindow {
     cancelText: string;
@@ -124,6 +154,16 @@ declare global {
     prototype: HTMLAvatarComponentElement;
     new (): HTMLAvatarComponentElement;
   };
+  interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {}
+  var HTMLCheckmarkComponentElement: {
+    prototype: HTMLCheckmarkComponentElement;
+    new (): HTMLCheckmarkComponentElement;
+  };
+  interface HTMLEmojiCheckboxComponentElement extends Components.EmojiCheckboxComponent, HTMLStencilElement {}
+  var HTMLEmojiCheckboxComponentElement: {
+    prototype: HTMLEmojiCheckboxComponentElement;
+    new (): HTMLEmojiCheckboxComponentElement;
+  };
   interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
   var HTMLGoogleTagManagerElement: {
     prototype: HTMLGoogleTagManagerElement;
@@ -133,6 +173,11 @@ declare global {
   var HTMLImageComponentElement: {
     prototype: HTMLImageComponentElement;
     new (): HTMLImageComponentElement;
+  };
+  interface HTMLLabelComponentElement extends Components.LabelComponent, HTMLStencilElement {}
+  var HTMLLabelComponentElement: {
+    prototype: HTMLLabelComponentElement;
+    new (): HTMLLabelComponentElement;
   };
   interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
   var HTMLModalWindowElement: {
@@ -161,8 +206,11 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'avatar-component': HTMLAvatarComponentElement;
+    'checkmark-component': HTMLCheckmarkComponentElement;
+    'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
     'image-component': HTMLImageComponentElement;
+    'label-component': HTMLLabelComponentElement;
     'modal-window': HTMLModalWindowElement;
     'my-button': HTMLMyButtonElement;
     'my-component': HTMLMyComponentElement;
@@ -209,6 +257,30 @@ declare namespace LocalJSX {
      */
     variant?: 'circular' | 'rounded' | 'square';
   }
+  interface CheckmarkComponent {
+    /**
+     * Un-checked state emoji code
+     */
+    checkFalse?: string;
+    /**
+     * Checked state emoji code
+     */
+    checkTrue?: string;
+    /**
+     * Checkbox state
+     */
+    checked?: boolean;
+  }
+  interface EmojiCheckboxComponent {
+    /**
+     * The initial state of checkbox
+     */
+    checked?: boolean;
+    /**
+     * Checkbox name
+     */
+    name?: string;
+  }
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -219,6 +291,12 @@ declare namespace LocalJSX {
     srcImg?: string;
     srcImgName?: string;
     srcNextGen?: string;
+  }
+  interface LabelComponent {
+    /**
+     * Checkbox state
+     */
+    checked?: boolean;
   }
   interface ModalWindow {
     cancelText?: string;
@@ -284,8 +362,11 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     'avatar-component': AvatarComponent;
+    'checkmark-component': CheckmarkComponent;
+    'emoji-checkbox-component': EmojiCheckboxComponent;
     'google-tag-manager': GoogleTagManager;
     'image-component': ImageComponent;
+    'label-component': LabelComponent;
     'modal-window': ModalWindow;
     'my-button': MyButton;
     'my-component': MyComponent;
@@ -298,8 +379,11 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+      'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
+      'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
+      'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
       'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
       'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
