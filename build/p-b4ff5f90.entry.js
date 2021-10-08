@@ -1,1 +1,0 @@
-import{r as s,h as t,H as r}from"./p-1edd017d.js";const e=class{constructor(t){s(this,t)}render(){return t(r,null,t("picture",null,t("source",{srcSet:this.srcNextGen}),t("source",{srcSet:this.srcImg,type:"image"}),t("img",{src:this.srcImg,alt:this.srcImgName})))}};e.style=":host{display:block;margin:0 auto}";export{e as image_component}
