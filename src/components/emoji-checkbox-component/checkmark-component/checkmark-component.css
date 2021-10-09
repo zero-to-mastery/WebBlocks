@@ -1,5 +1,11 @@
 :host {
+  /**
+   * @prop --checkFalse: the un-checked emoji
+   */
   --checkFalse: '';
+  /**
+   * @prop --checkTrue: the checked emoji
+   */
   --checkTrue: '';
   display: inline-block;
 }
