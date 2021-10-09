@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'alert-component',
@@ -8,6 +8,8 @@ export class Alert {
   @Prop() text: string;
   @Prop() icon: string;
   @Prop() variant: string;
+  @Prop() width: string;
+  @Prop() action: string;
 
   checkVariant(variant) {
     switch (variant) {
@@ -73,7 +75,7 @@ export class Alert {
         case 'error':
           return errorIcon;
         case 'success':
-          return errorIcon;
+          return successIcon;
         case 'warning':
           return warningIcon;
         case 'info':
@@ -81,7 +83,7 @@ export class Alert {
         case 'error-outline':
           return errorIcon;
         case 'success-outline':
-          return errorIcon;
+          return successIcon;
         case 'warning-outline':
           return warningIcon;
         case 'info-outline':
@@ -91,11 +93,17 @@ export class Alert {
       }
     }
 
-    let alert = (
-      <div class={`alert ${this.checkVariant(this.variant)}`}>
-        {this.icon ? <img src={this.icon} alt="" /> : checkIcon(this.variant)}
-        {this.text}
-      </div>
+    const width = this.width ? this.width : '300px';
+
+    const alert = (
+      <Host>
+        <div class={`alert ${this.checkVariant(this.variant)}`} style={{ maxWidth: width }}>
+          <div>
+            {this.icon ? <img src={this.icon} alt="" /> : checkIcon(this.variant)}
+            {this.text}
+          </div>
+        </div>
+      </Host>
     );
 
     return alert;

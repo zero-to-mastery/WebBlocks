@@ -7,9 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AlertComponent {
+        "action": string;
         "icon": string;
         "text": string;
         "variant": string;
+        "width": string;
     }
     interface AvatarComponent {
         /**
@@ -192,9 +194,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AlertComponent {
+        "action"?: string;
         "icon"?: string;
         "text"?: string;
         "variant"?: string;
+        "width"?: string;
     }
     interface AvatarComponent {
         /**

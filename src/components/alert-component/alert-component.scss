@@ -10,6 +10,10 @@ $successTextColor: #2a502c;
 $successIconColor: #45c549;
 $successColorBg: #edf7ed;
 
+$infoTextColor: #4f8096;
+$infoIconColor: #4f8096;
+$infoColorBg: #e5f6fd;
+
 @mixin svgBg($color) {
   polygon,
   line,
@@ -25,11 +29,17 @@ $successColorBg: #edf7ed;
 
 .alert {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   border-radius: 0.5rem;
   width: 100%;
   max-width: 300px;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
 
   svg,
   img {
@@ -57,20 +67,56 @@ $successColorBg: #edf7ed;
 }
 
 .info {
-  background-color: #e5f6fd;
-  color: #4f8096;
-  @include svgBg(#4f8096);
+  background-color: $infoColorBg;
+  color: $infoTextColor;
+  @include svgBg($infoIconColor);
 }
 
 .error-outline {
   border: 3px solid darken($errorColorBg, 10%);
-  color: $warningTextColor;
-  @include svgBg($warningIconColor);
+  color: $errorTextColor;
+  @include svgBg($errorIconColor);
 }
 
 .success-outline {
+  border: 3px solid darken($successColorBg, 10%);
+  color: $successTextColor;
+  @include svgBg($successIconColor);
 }
 .warning-outline {
+  border: 3px solid darken($warningColorBg, 10%);
+  color: $warningTextColor;
+  @include svgBg($warningIconColor);
 }
 .info-outline {
+  border: 3px solid darken($infoColorBg, 10%);
+  color: $infoTextColor;
+  @include svgBg($infoIconColor);
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  svg {
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.055);
+  }
+}
+
+.closeAlert {
+  display: none;
 }
