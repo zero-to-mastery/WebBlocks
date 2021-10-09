@@ -1,0 +1,13 @@
+:host {
+  --checkFalse: '';
+  --checkTrue: '';
+  display: inline-block;
+}
+
+span.check-true::after {
+  content: var(--checkTrue);
+}
+
+span.check-false::after {
+  content: var(--checkFalse);
+}

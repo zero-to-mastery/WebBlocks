@@ -59,6 +59,12 @@
         <my-input placeholder="Input North American phone number" pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$" size="large"> </my-input>
         <my-input placeholder="Input International phone number" pattern="^\+(?:[0-9] ?){6,14}[0-9]$" size="large"> </my-input>
       </section>
+      <section style="padding: 30px">
+        <emoji-checkbox-component id="test" name="test" checked="false">
+          <checkmark-component check-true="\1F315" check-false="\1F311"></checkmark-component>
+          <label-component>Hello World!</label-component>
+        </emoji-checkbox-component>
+      </section>
     </main>
   </body>
 </html>
