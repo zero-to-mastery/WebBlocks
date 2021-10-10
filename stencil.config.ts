@@ -26,6 +26,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      footer: '*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*',
     },
     {
       type: 'www',

@@ -19,6 +19,10 @@ Contribution can happen in more possible ways:
 2. Create new web components
 3. Add existing web components to the `index.html` file to show how they work (with code samples and by embedding them)
 4. Invent new subpages for better structuring of web component usage under `src/pages` (don't forget to link the subpages in the index.html file)
+5. Document your component:
+   - Write doc comments for the component props (writing doc comments for other parts of your code is great, but won't be written to your `readme.md`).
+   - Run `npm run build` to generate the readme file.
+   - Add a usage example to your `readme.md` (above the `<!-- Auto Generated Below -->` comment) and any other information you may find useful.
 
 ## Request new Web Components using Github's [issues](../../issues)
 
