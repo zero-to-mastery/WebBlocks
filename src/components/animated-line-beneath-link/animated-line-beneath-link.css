@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.container {
+  position: relative;
+  display: block;
+  overflow: visible;
+  cursor: pointer;
+  pointer-events: auto;
+  --underline-color: rgb(0, 204, 255);
+}
+
+.text {
+  pointer-events: auto;
+  cursor: pointer !important;
+}
+
+.container::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -0.7vh;
+  width: 100%;
+  height: 0.35vh;
+  border-radius: 10px;
+  background-color: var(--underline-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.container:hover::after {
+  transform: scaleX(1);
+}
