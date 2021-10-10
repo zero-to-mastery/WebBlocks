@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
+  interface AnimatedLineBeneathLink {
+    text: string;
+  }
   interface AvatarComponent {
     /**
      * Alternate text when src image breaks
@@ -73,6 +76,13 @@ export namespace Components {
      * The google tag manage container ID
      */
     containerId: string;
+  }
+  interface HeroComponent {
+    background: string;
+    heading: string;
+    height: string;
+    imgurl: string;
+    width: string;
   }
   interface ImageComponent {
     srcImg: string;
@@ -149,6 +159,11 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLAnimatedLineBeneathLinkElement extends Components.AnimatedLineBeneathLink, HTMLStencilElement {}
+  var HTMLAnimatedLineBeneathLinkElement: {
+    prototype: HTMLAnimatedLineBeneathLinkElement;
+    new (): HTMLAnimatedLineBeneathLinkElement;
+  };
   interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {}
   var HTMLAvatarComponentElement: {
     prototype: HTMLAvatarComponentElement;
@@ -168,6 +183,11 @@ declare global {
   var HTMLGoogleTagManagerElement: {
     prototype: HTMLGoogleTagManagerElement;
     new (): HTMLGoogleTagManagerElement;
+  };
+  interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {}
+  var HTMLHeroComponentElement: {
+    prototype: HTMLHeroComponentElement;
+    new (): HTMLHeroComponentElement;
   };
   interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
   var HTMLImageComponentElement: {
@@ -205,10 +225,12 @@ declare global {
     new (): HTMLTooltipComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'animated-line-beneath-link': HTMLAnimatedLineBeneathLinkElement;
     'avatar-component': HTMLAvatarComponentElement;
     'checkmark-component': HTMLCheckmarkComponentElement;
     'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
+    'hero-component': HTMLHeroComponentElement;
     'image-component': HTMLImageComponentElement;
     'label-component': HTMLLabelComponentElement;
     'modal-window': HTMLModalWindowElement;
@@ -219,6 +241,9 @@ declare global {
   }
 }
 declare namespace LocalJSX {
+  interface AnimatedLineBeneathLink {
+    text?: string;
+  }
   interface AvatarComponent {
     /**
      * Alternate text when src image breaks
@@ -286,6 +311,13 @@ declare namespace LocalJSX {
      * The google tag manage container ID
      */
     containerId?: string;
+  }
+  interface HeroComponent {
+    background?: string;
+    heading?: string;
+    height?: string;
+    imgurl?: string;
+    width?: string;
   }
   interface ImageComponent {
     srcImg?: string;
@@ -361,10 +393,12 @@ declare namespace LocalJSX {
     text?: string;
   }
   interface IntrinsicElements {
+    'animated-line-beneath-link': AnimatedLineBeneathLink;
     'avatar-component': AvatarComponent;
     'checkmark-component': CheckmarkComponent;
     'emoji-checkbox-component': EmojiCheckboxComponent;
     'google-tag-manager': GoogleTagManager;
+    'hero-component': HeroComponent;
     'image-component': ImageComponent;
     'label-component': LabelComponent;
     'modal-window': ModalWindow;
@@ -378,10 +412,12 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'animated-line-beneath-link': LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
       'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
       'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+      'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
       'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
