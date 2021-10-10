@@ -53,11 +53,11 @@ export namespace Components {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji HEX code
+     * Un-checked state emoji code
      */
     checkFalse: string;
     /**
-     * Checked state emoji HEX code
+     * Checked state emoji code
      */
     checkTrue: string;
     /**
@@ -279,11 +279,11 @@ declare namespace LocalJSX {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji HEX code
+     * Un-checked state emoji code
      */
     checkFalse?: string;
     /**
-     * Checked state emoji HEX code
+     * Checked state emoji code
      */
     checkTrue?: string;
     /**
