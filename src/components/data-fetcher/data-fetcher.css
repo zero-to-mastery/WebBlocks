@@ -10,6 +10,7 @@
 }
 
 /* for main back of data-fetcher */
+
 .data-fetcher-main {
   display: flex;
   flex-direction: column;
@@ -17,11 +18,12 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 30vw;
+  width: 35vw;
   transform: translate(-50%, -50%);
   background-color: #1f2833;
   box-shadow: 0px 0px 9px 0px rgb(107 96 96);
-  min-height: 185px;
+  max-height: 215px;
+  border-radius: 2px;
 }
 
 .data-fetcher-info {
@@ -61,7 +63,7 @@
 
 .data-fetcher-submit:hover {
   background-color: #74767c2f;
-  border-width: 5px;
+  border-width: 3px;
   transition: all 50ms 0.1s ease-in-out;
 }
 .data-fetcher-input-url:hover {
@@ -71,9 +73,13 @@
 /* For request parameters */
 .request-params{
   display: flex;
+  flex-direction: column;
 }
 
 .labels{
-  color: #66fcf1;
+  color:rgb(77, 207, 200);
   margin-right: 2px;
+}
+.request-options{
+  width: 5rem;
 }
