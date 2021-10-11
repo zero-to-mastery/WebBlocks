@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+:host {
+  --bg: #111;
+  --gradient: linear-gradient(90deg, #ffd600 1.54%, #fc005b 14.67%, #f926f0 30.46%, #5446f6 43.79%, #13c8ef 57.11%, #12d531 68.96%, #eac400 96.3%);
+}
+
+.outer-container {
+  border-radius: 15px;
+  background: var(--gradient);
+  padding: 0.3rem;
+  animation: animateBg 2s linear;
+  animation-iteration-count: infinite;
+}
+
+.inner-container {
+  border-radius: 10px;
+  padding: 0.8rem 2rem;
+  background: var(--bg);
+  color: white;
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+@keyframes animateBg {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 10rem;
+  }
+}
