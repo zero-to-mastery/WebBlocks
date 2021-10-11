@@ -65,6 +65,8 @@ export namespace Components {
          */
         "checked": boolean;
     }
+    interface DataFetcher {
+    }
     interface EmojiCheckboxComponent {
         /**
           * The initial state of checkbox
@@ -95,6 +97,8 @@ export namespace Components {
     interface ModalWindow {
         "cancelText": string;
         "confirmText": string;
+        "handleCancel": Function;
+        "handleConfirm": Function;
         "pointerEvents": boolean;
         "title": string;
     }
@@ -174,6 +178,12 @@ declare global {
         prototype: HTMLCheckmarkComponentElement;
         new (): HTMLCheckmarkComponentElement;
     };
+    interface HTMLDataFetcherElement extends Components.DataFetcher, HTMLStencilElement {
+    }
+    var HTMLDataFetcherElement: {
+        prototype: HTMLDataFetcherElement;
+        new (): HTMLDataFetcherElement;
+    };
     interface HTMLEmojiCheckboxComponentElement extends Components.EmojiCheckboxComponent, HTMLStencilElement {
     }
     var HTMLEmojiCheckboxComponentElement: {
@@ -232,6 +242,7 @@ declare global {
         "alert-component": HTMLAlertComponentElement;
         "avatar-component": HTMLAvatarComponentElement;
         "checkmark-component": HTMLCheckmarkComponentElement;
+        "data-fetcher": HTMLDataFetcherElement;
         "emoji-checkbox-component": HTMLEmojiCheckboxComponentElement;
         "google-tag-manager": HTMLGoogleTagManagerElement;
         "image-component": HTMLImageComponentElement;
@@ -303,6 +314,8 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean;
     }
+    interface DataFetcher {
+    }
     interface EmojiCheckboxComponent {
         /**
           * The initial state of checkbox
@@ -333,6 +346,8 @@ declare namespace LocalJSX {
     interface ModalWindow {
         "cancelText"?: string;
         "confirmText"?: string;
+        "handleCancel"?: Function;
+        "handleConfirm"?: Function;
         "pointerEvents"?: boolean;
         "title"?: string;
     }
@@ -396,6 +411,7 @@ declare namespace LocalJSX {
         "alert-component": AlertComponent;
         "avatar-component": AvatarComponent;
         "checkmark-component": CheckmarkComponent;
+        "data-fetcher": DataFetcher;
         "emoji-checkbox-component": EmojiCheckboxComponent;
         "google-tag-manager": GoogleTagManager;
         "image-component": ImageComponent;
@@ -414,6 +430,7 @@ declare module "@stencil/core" {
             "alert-component": LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
             "avatar-component": LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
             "checkmark-component": LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
+            "data-fetcher": LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
             "emoji-checkbox-component": LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
             "google-tag-manager": LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
             "image-component": LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
