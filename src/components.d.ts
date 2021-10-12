@@ -56,11 +56,11 @@ export namespace Components {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji code
+     * Un-checked state emoji HEX code
      */
     checkFalse: string;
     /**
-     * Checked state emoji code
+     * Checked state emoji HEX code
      */
     checkTrue: string;
     /**
@@ -78,6 +78,7 @@ export namespace Components {
      */
     name: string;
   }
+  interface FlowingColoredBorderButton {}
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -105,6 +106,8 @@ export namespace Components {
   interface ModalWindow {
     cancelText: string;
     confirmText: string;
+    handleCancel: Function;
+    handleConfirm: Function;
     pointerEvents: boolean;
     title: string;
   }
@@ -191,6 +194,11 @@ declare global {
     prototype: HTMLEmojiCheckboxComponentElement;
     new (): HTMLEmojiCheckboxComponentElement;
   };
+  interface HTMLFlowingColoredBorderButtonElement extends Components.FlowingColoredBorderButton, HTMLStencilElement {}
+  var HTMLFlowingColoredBorderButtonElement: {
+    prototype: HTMLFlowingColoredBorderButtonElement;
+    new (): HTMLFlowingColoredBorderButtonElement;
+  };
   interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
   var HTMLGoogleTagManagerElement: {
     prototype: HTMLGoogleTagManagerElement;
@@ -242,6 +250,7 @@ declare global {
     'avatar-component': HTMLAvatarComponentElement;
     'checkmark-component': HTMLCheckmarkComponentElement;
     'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
+    'flowing-colored-border-button': HTMLFlowingColoredBorderButtonElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
     'hero-component': HTMLHeroComponentElement;
     'image-component': HTMLImageComponentElement;
@@ -304,11 +313,11 @@ declare namespace LocalJSX {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji code
+     * Un-checked state emoji HEX code
      */
     checkFalse?: string;
     /**
-     * Checked state emoji code
+     * Checked state emoji HEX code
      */
     checkTrue?: string;
     /**
@@ -326,6 +335,7 @@ declare namespace LocalJSX {
      */
     name?: string;
   }
+  interface FlowingColoredBorderButton {}
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
@@ -353,6 +363,8 @@ declare namespace LocalJSX {
   interface ModalWindow {
     cancelText?: string;
     confirmText?: string;
+    handleCancel?: Function;
+    handleConfirm?: Function;
     pointerEvents?: boolean;
     title?: string;
   }
@@ -418,6 +430,7 @@ declare namespace LocalJSX {
     'avatar-component': AvatarComponent;
     'checkmark-component': CheckmarkComponent;
     'emoji-checkbox-component': EmojiCheckboxComponent;
+    'flowing-colored-border-button': FlowingColoredBorderButton;
     'google-tag-manager': GoogleTagManager;
     'hero-component': HeroComponent;
     'image-component': ImageComponent;
@@ -438,6 +451,7 @@ declare module '@stencil/core' {
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
       'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
       'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
+      'flowing-colored-border-button': LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
       'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
