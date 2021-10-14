@@ -49,8 +49,4 @@ Our project team contains members from the [zero-to-mastery](https://zerotomaste
 
 > [![r4pt0s](https://avatars2.githubusercontent.com/u/29685827?s=100&v=4)](https://github.com/r4pt0s) [![tristian](https://avatars.githubusercontent.com/u/59102133?s=100&v=4)](https://github.com/IM-Deane/IM-Deane)
 
-#### Team Members and Contributers
-
-> Currently nobody 😱😱😱
-
 This project was bootstrapped with [StencilJs](https://stenciljs.com/docs/getting-started).

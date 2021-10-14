@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'modal-window',
@@ -6,24 +6,42 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ModalWindow {
-  @Prop() title: string;
+  @Prop() heading: string;
   @Prop() confirmText: string;
   @Prop() cancelText: string;
   @Prop() pointerEvents: boolean;
+  @Prop() handleConfirm: Function;
+  @Prop() handleCancel: Function;
+  @State() isOpen: boolean = true;
+  @Listen('click', { capture: true })
+  onCancel() {
+    if (this.handleCancel) this.handleCancel();
+    this.isOpen = false;
+  }
+
+  onConfirm() {
+    if (this.handleConfirm) this.handleConfirm();
+    this.isOpen = false;
+  }
 
   render() {
-    return (
-      <Host>
-        <div class="modal-window">
-          <div class="modal-title">{this.title}</div>
-          <slot></slot>
-          <div class="modal-btns">
-            <button class="modal-cancel-btn modal-btn">{this.cancelText}</button>
-            <button class="modal-confirm-btn modal-btn">{this.confirmText}</button>
+    if (this.isOpen)
+      return (
+        <Host>
+          <div class="modal-window">
+            <div class="modal-title">{this.heading}</div>
+            <slot></slot>
+            <div class="modal-btns">
+              <button onClick={this.onCancel} class="modal-cancel-btn modal-btn">
+                {this.cancelText}
+              </button>
+              <button onClick={this.onConfirm} class="modal-confirm-btn modal-btn">
+                {this.confirmText}
+              </button>
+            </div>
           </div>
-        </div>
-        <div id="overlay" style={{ 'pointer-events': this.pointerEvents ? 'all' : 'none' }}></div>
-      </Host>
-    );
+          <div id="overlay" style={{ 'pointer-events': this.pointerEvents ? 'all' : 'none' }}></div>
+        </Host>
+      );
   }
 }

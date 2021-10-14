@@ -1,3 +1,8 @@
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 header {
   background-color: var(--bg-primary);
   width: 100vw;
@@ -6,4 +11,42 @@ header {
     display: block;
     margin: 0 auto;
   }
+}
+
+.navbar {
+  background-color: var(--bg-primary);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: absolute;
+  color: #fff;
+  font: sans-serif;
+
+  .nav-logo-div {
+    width: 30%;
+  }
+
+  .nav-logo {
+    height: 120px;
+    object-fit: contain;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  position: relative;
+  margin: 3rem 0;
 }

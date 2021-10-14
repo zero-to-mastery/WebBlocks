@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Roboto+Mono:wght@500&family=Roboto:wght@500&display=swap');
+:host {
+  display: block;
+}
+/* Normalizing  the css of data-fetcher component */
+.data-fetcher-main * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* for main back of data-fetcher */
+
+.data-fetcher-main {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 20px;
+  width: 35vw;
+  background-color: #1f2833;
+  box-shadow: 0px 0px 9px 0px rgb(107 96 96);
+  max-height: 215px;
+  border-radius: 2px;
+}
+
+.data-fetcher-info {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+/* below are the styles for childs of data fetcher */
+.data-fetcher-child {
+  margin: 10px 0;
+}
+
+.data-fetcher-input-url {
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  outline: none;
+  border: 2px solid #05445e;
+  caret-color: #66fcf1;
+  color: #66fcf1;
+  background-color: #1f2833;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.data-fetcher-submit {
+  padding: 0.5rem 2rem;
+  align-self: center;
+  color: #66fcf1;
+  background-color: #26282f98;
+  outline: none;
+  border: none;
+  border: 2px solid #45a29e;
+  border-radius: 4px;
+}
+
+.data-fetcher-submit:hover {
+  background-color: #74767c2f;
+  border-width: 3px;
+  transition: all 50ms 0.1s ease-in-out;
+}
+.data-fetcher-input-url:hover {
+  background-color: #2a2e35;
+}
+
+/* For request parameters */
+.request-params {
+  display: flex;
+  flex-direction: column;
+}
+
+.labels {
+  color: rgb(77, 207, 200);
+  margin-right: 2px;
+}
+.request-options {
+  width: 5rem;
+}

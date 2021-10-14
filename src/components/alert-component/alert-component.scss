@@ -1,0 +1,122 @@
+$errorTextColor: #936463;
+$errorIconColor: #f0625f;
+$errorColorBg: #fdeded;
+
+$warningTextColor: #947f63;
+$warningIconColor: #ffa117;
+$warningColorBg: #fff4e5;
+
+$successTextColor: #2a502c;
+$successIconColor: #45c549;
+$successColorBg: #edf7ed;
+
+$infoTextColor: #4f8096;
+$infoIconColor: #4f8096;
+$infoColorBg: #e5f6fd;
+
+@mixin svgBg($color) {
+  polygon,
+  line,
+  circle,
+  path {
+    stroke: $color;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  svg,
+  img {
+    width: 20px;
+    margin-right: 0.6rem;
+  }
+}
+
+.error {
+  background-color: $errorColorBg;
+  color: $errorTextColor;
+  @include svgBg($errorIconColor);
+}
+
+.warning {
+  background-color: $warningColorBg;
+  color: $warningTextColor;
+  @include svgBg($warningIconColor);
+}
+
+.success {
+  background-color: $successColorBg;
+  color: $successTextColor;
+  @include svgBg($successIconColor);
+}
+
+.info {
+  background-color: $infoColorBg;
+  color: $infoTextColor;
+  @include svgBg($infoIconColor);
+}
+
+.error-outline {
+  border: 3px solid darken($errorColorBg, 10%);
+  color: $errorTextColor;
+  @include svgBg($errorIconColor);
+}
+
+.success-outline {
+  border: 3px solid darken($successColorBg, 10%);
+  color: $successTextColor;
+  @include svgBg($successIconColor);
+}
+.warning-outline {
+  border: 3px solid darken($warningColorBg, 10%);
+  color: $warningTextColor;
+  @include svgBg($warningIconColor);
+}
+.info-outline {
+  border: 3px solid darken($infoColorBg, 10%);
+  color: $infoTextColor;
+  @include svgBg($infoIconColor);
+}
+
+.closeBtn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  svg {
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.055);
+  }
+}
+
+.closeAlert {
+  display: none;
+}

@@ -6,6 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
+  interface AlertComponent {
+    action: string;
+    icon: string;
+    text: string;
+    variant: string;
+    width: string;
+  }
+  interface AnimatedLineBeneathLink {
+    text: string;
+  }
   interface AvatarComponent {
     /**
      * Alternate text when src image breaks
@@ -18,7 +28,7 @@ export namespace Components {
      * @type {string}
      * @memberof AvatarComponent
      */
-    className: string;
+    customClass: string;
     /**
      * Avatar image size
      * @type {('small' | 'medium' | 'large')}
@@ -36,7 +46,7 @@ export namespace Components {
      * @type {string}
      * @memberof AvatarComponent
      */
-    title: string;
+    tooltipTxt: string;
     /**
      * Avatar image shape variants
      * @type {('circular' | 'rounded' | 'square')}
@@ -46,11 +56,11 @@ export namespace Components {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji code
+     * Un-checked state emoji HEX code
      */
     checkFalse: string;
     /**
-     * Checked state emoji code
+     * Checked state emoji HEX code
      */
     checkTrue: string;
     /**
@@ -58,6 +68,7 @@ export namespace Components {
      */
     checked: boolean;
   }
+  interface DataFetcher {}
   interface EmojiCheckboxComponent {
     /**
      * The initial state of checkbox
@@ -68,11 +79,19 @@ export namespace Components {
      */
     name: string;
   }
+  interface FlowingColoredBorderButton {}
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
      */
     containerId: string;
+  }
+  interface HeroComponent {
+    background: string;
+    heading: string;
+    height: string;
+    imgurl: string;
+    width: string;
   }
   interface ImageComponent {
     srcImg: string;
@@ -88,15 +107,17 @@ export namespace Components {
   interface ModalWindow {
     cancelText: string;
     confirmText: string;
+    handleCancel: Function;
+    handleConfirm: Function;
+    heading: string;
     pointerEvents: boolean;
-    title: string;
   }
   interface MyButton {
     color: string;
     icon: string;
     name: string;
     type: string;
-    typeButtton: string;
+    typeButton: string;
     width: string;
   }
   interface MyComponent {
@@ -149,6 +170,16 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLAlertComponentElement extends Components.AlertComponent, HTMLStencilElement {}
+  var HTMLAlertComponentElement: {
+    prototype: HTMLAlertComponentElement;
+    new (): HTMLAlertComponentElement;
+  };
+  interface HTMLAnimatedLineBeneathLinkElement extends Components.AnimatedLineBeneathLink, HTMLStencilElement {}
+  var HTMLAnimatedLineBeneathLinkElement: {
+    prototype: HTMLAnimatedLineBeneathLinkElement;
+    new (): HTMLAnimatedLineBeneathLinkElement;
+  };
   interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {}
   var HTMLAvatarComponentElement: {
     prototype: HTMLAvatarComponentElement;
@@ -159,15 +190,30 @@ declare global {
     prototype: HTMLCheckmarkComponentElement;
     new (): HTMLCheckmarkComponentElement;
   };
+  interface HTMLDataFetcherElement extends Components.DataFetcher, HTMLStencilElement {}
+  var HTMLDataFetcherElement: {
+    prototype: HTMLDataFetcherElement;
+    new (): HTMLDataFetcherElement;
+  };
   interface HTMLEmojiCheckboxComponentElement extends Components.EmojiCheckboxComponent, HTMLStencilElement {}
   var HTMLEmojiCheckboxComponentElement: {
     prototype: HTMLEmojiCheckboxComponentElement;
     new (): HTMLEmojiCheckboxComponentElement;
   };
+  interface HTMLFlowingColoredBorderButtonElement extends Components.FlowingColoredBorderButton, HTMLStencilElement {}
+  var HTMLFlowingColoredBorderButtonElement: {
+    prototype: HTMLFlowingColoredBorderButtonElement;
+    new (): HTMLFlowingColoredBorderButtonElement;
+  };
   interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
   var HTMLGoogleTagManagerElement: {
     prototype: HTMLGoogleTagManagerElement;
     new (): HTMLGoogleTagManagerElement;
+  };
+  interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {}
+  var HTMLHeroComponentElement: {
+    prototype: HTMLHeroComponentElement;
+    new (): HTMLHeroComponentElement;
   };
   interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
   var HTMLImageComponentElement: {
@@ -205,10 +251,15 @@ declare global {
     new (): HTMLTooltipComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'alert-component': HTMLAlertComponentElement;
+    'animated-line-beneath-link': HTMLAnimatedLineBeneathLinkElement;
     'avatar-component': HTMLAvatarComponentElement;
     'checkmark-component': HTMLCheckmarkComponentElement;
+    'data-fetcher': HTMLDataFetcherElement;
     'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
+    'flowing-colored-border-button': HTMLFlowingColoredBorderButtonElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
+    'hero-component': HTMLHeroComponentElement;
     'image-component': HTMLImageComponentElement;
     'label-component': HTMLLabelComponentElement;
     'modal-window': HTMLModalWindowElement;
@@ -219,6 +270,16 @@ declare global {
   }
 }
 declare namespace LocalJSX {
+  interface AlertComponent {
+    action?: string;
+    icon?: string;
+    text?: string;
+    variant?: string;
+    width?: string;
+  }
+  interface AnimatedLineBeneathLink {
+    text?: string;
+  }
   interface AvatarComponent {
     /**
      * Alternate text when src image breaks
@@ -231,7 +292,7 @@ declare namespace LocalJSX {
      * @type {string}
      * @memberof AvatarComponent
      */
-    className?: string;
+    customClass?: string;
     /**
      * Avatar image size
      * @type {('small' | 'medium' | 'large')}
@@ -249,7 +310,7 @@ declare namespace LocalJSX {
      * @type {string}
      * @memberof AvatarComponent
      */
-    title?: string;
+    tooltipTxt?: string;
     /**
      * Avatar image shape variants
      * @type {('circular' | 'rounded' | 'square')}
@@ -259,11 +320,11 @@ declare namespace LocalJSX {
   }
   interface CheckmarkComponent {
     /**
-     * Un-checked state emoji code
+     * Un-checked state emoji HEX code
      */
     checkFalse?: string;
     /**
-     * Checked state emoji code
+     * Checked state emoji HEX code
      */
     checkTrue?: string;
     /**
@@ -271,6 +332,7 @@ declare namespace LocalJSX {
      */
     checked?: boolean;
   }
+  interface DataFetcher {}
   interface EmojiCheckboxComponent {
     /**
      * The initial state of checkbox
@@ -281,11 +343,19 @@ declare namespace LocalJSX {
      */
     name?: string;
   }
+  interface FlowingColoredBorderButton {}
   interface GoogleTagManager {
     /**
      * The google tag manage container ID
      */
     containerId?: string;
+  }
+  interface HeroComponent {
+    background?: string;
+    heading?: string;
+    height?: string;
+    imgurl?: string;
+    width?: string;
   }
   interface ImageComponent {
     srcImg?: string;
@@ -301,15 +371,17 @@ declare namespace LocalJSX {
   interface ModalWindow {
     cancelText?: string;
     confirmText?: string;
+    handleCancel?: Function;
+    handleConfirm?: Function;
+    heading?: string;
     pointerEvents?: boolean;
-    title?: string;
   }
   interface MyButton {
     color?: string;
     icon?: string;
     name?: string;
     type?: string;
-    typeButtton?: string;
+    typeButton?: string;
     width?: string;
   }
   interface MyComponent {
@@ -361,10 +433,15 @@ declare namespace LocalJSX {
     text?: string;
   }
   interface IntrinsicElements {
+    'alert-component': AlertComponent;
+    'animated-line-beneath-link': AnimatedLineBeneathLink;
     'avatar-component': AvatarComponent;
     'checkmark-component': CheckmarkComponent;
+    'data-fetcher': DataFetcher;
     'emoji-checkbox-component': EmojiCheckboxComponent;
+    'flowing-colored-border-button': FlowingColoredBorderButton;
     'google-tag-manager': GoogleTagManager;
+    'hero-component': HeroComponent;
     'image-component': ImageComponent;
     'label-component': LabelComponent;
     'modal-window': ModalWindow;
@@ -378,10 +455,15 @@ export { LocalJSX as JSX };
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'alert-component': LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
+      'animated-line-beneath-link': LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
       'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
+      'data-fetcher': LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
       'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
+      'flowing-colored-border-button': LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+      'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
       'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
