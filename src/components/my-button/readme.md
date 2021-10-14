@@ -4,14 +4,14 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type     | Default     |
-| ------------- | -------------- | ----------- | -------- | ----------- |
-| `color`       | `color`        |             | `string` | `undefined` |
-| `icon`        | `icon`         |             | `string` | `undefined` |
-| `name`        | `name`         |             | `string` | `undefined` |
-| `type`        | `type`         |             | `string` | `undefined` |
-| `typeButtton` | `type-buttton` |             | `string` | `undefined` |
-| `width`       | `width`        |             | `string` | `undefined` |
+| Property     | Attribute     | Description | Type     | Default     |
+| ------------ | ------------- | ----------- | -------- | ----------- |
+| `color`      | `color`       |             | `string` | `undefined` |
+| `icon`       | `icon`        |             | `string` | `undefined` |
+| `name`       | `name`        |             | `string` | `undefined` |
+| `type`       | `type`        |             | `string` | `undefined` |
+| `typeButton` | `type-button` |             | `string` | `undefined` |
+| `width`      | `width`       |             | `string` | `undefined` |
 
 ---
 
