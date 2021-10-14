@@ -1,5 +1,6 @@
 {
   "name": "webblocks",
+  "homepage": "https://zero-to-mastery.github.io/WebBlocks/",
   "version": "0.0.1",
   "description": "Hacktoberfest 2021 - ZTM Community Project",
   "main": "dist/index.cjs.js",
