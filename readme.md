@@ -39,7 +39,7 @@ On each merge into the main branch, the awesome Github Action [github-pages-depl
 
 ## Goal 🏁
 
-The goal of this project is, to the goal of this project is to showcase what we can do with web components and eventually to create a component library which we can host on npm.
+The goal of this project is to showcase what we can do with web components and eventually to create a component library that we can host on npm.
 
 ## Who we are?
 
