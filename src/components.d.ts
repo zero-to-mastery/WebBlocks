@@ -86,6 +86,7 @@ export namespace Components {
      */
     containerId: string;
   }
+  interface HamburgerMenu {}
   interface HeroComponent {
     background: string;
     heading: string;
@@ -210,6 +211,11 @@ declare global {
     prototype: HTMLGoogleTagManagerElement;
     new (): HTMLGoogleTagManagerElement;
   };
+  interface HTMLHamburgerMenuElement extends Components.HamburgerMenu, HTMLStencilElement {}
+  var HTMLHamburgerMenuElement: {
+    prototype: HTMLHamburgerMenuElement;
+    new (): HTMLHamburgerMenuElement;
+  };
   interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {}
   var HTMLHeroComponentElement: {
     prototype: HTMLHeroComponentElement;
@@ -259,6 +265,7 @@ declare global {
     'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
     'flowing-colored-border-button': HTMLFlowingColoredBorderButtonElement;
     'google-tag-manager': HTMLGoogleTagManagerElement;
+    'hamburger-menu': HTMLHamburgerMenuElement;
     'hero-component': HTMLHeroComponentElement;
     'image-component': HTMLImageComponentElement;
     'label-component': HTMLLabelComponentElement;
@@ -350,6 +357,7 @@ declare namespace LocalJSX {
      */
     containerId?: string;
   }
+  interface HamburgerMenu {}
   interface HeroComponent {
     background?: string;
     heading?: string;
@@ -441,6 +449,7 @@ declare namespace LocalJSX {
     'emoji-checkbox-component': EmojiCheckboxComponent;
     'flowing-colored-border-button': FlowingColoredBorderButton;
     'google-tag-manager': GoogleTagManager;
+    'hamburger-menu': HamburgerMenu;
     'hero-component': HeroComponent;
     'image-component': ImageComponent;
     'label-component': LabelComponent;
@@ -463,6 +472,7 @@ declare module '@stencil/core' {
       'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
       'flowing-colored-border-button': LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+      'hamburger-menu': LocalJSX.HamburgerMenu & JSXBase.HTMLAttributes<HTMLHamburgerMenuElement>;
       'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
