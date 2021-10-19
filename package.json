@@ -24,7 +24,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@stencil/core": "^2.7.0"
+    "@stencil/core": "^2.7.0",
+    "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
     "@stencil/helmet": "^0.3.2",
