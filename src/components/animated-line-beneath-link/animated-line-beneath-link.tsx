@@ -14,6 +14,7 @@ export class AnimatedLineBeneathLink {
         <div class="container">
           <a class="text">{this.text}</a>
         </div>
+        
       </Host>
     );
     return html;
