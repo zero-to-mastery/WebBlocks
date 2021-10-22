@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto&display=swap');
+
+:host {
+  display: block;
+}
+
+.toast * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.toast {
+  display: flex;
+  padding: 0.8rem 5rem;
+  flex-direction: row;
+  margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 5px 16px 2px #858080;
+}
+
+.end--div {
+  width: 0.5rem;
+  border-radius: 15px;
+  height: 60px;
+  border: none;
+  position: absolute;
+  left: 13px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 33px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon svg {
+  color: #44cc00;
+}
+
+.toast--main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.toast--heading {
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.toast--message {
+  font-size: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+.toast--close {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toast--close svg {
+  height: 25px;
+  width: 25px;
+  color: rgb(75, 71, 71);
+}
+
+.toast--close:hover {
+  opacity: 0.8;
+}
+
+.toast--close:active {
+  background-color: #cccccc;
+}
+
+.toast--close i {
+  color: rgb(71, 70, 70);
+}
+
+/* background colors end--div */
+
+.success {
+  background-color: #44cc00;
+}
+
+.failure {
+  background-color: #ff0000;
+}
+.warning {
+  background-color: rgb(243, 240, 50);
+}
