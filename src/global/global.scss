@@ -25,9 +25,9 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  position: absolute;
+  position: fixed;
   color: #fff;
-  font: sans-serif;
+  border-bottom: 2px solid var(--white);
 
   .nav-logo-div {
     width: 30%;
