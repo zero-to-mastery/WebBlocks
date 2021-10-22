@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="build/webblocks.css" />
     <title>WebBlocks</title>
 
-
     <!-- CSS only -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
 
     <script type="module" src="build/webblocks.esm.js"></script>
     <script nomodule src="build/webblocks.js"></script>
@@ -34,10 +38,23 @@
       </div>
     </header>
     <main>
-      
       <hamburger-menu></hamburger-menu>
 
-      <notification-badge total-notifications = '78'></notification-badge>
+      <notification-badge total-notifications="78"></notification-badge>
+
+      <section>
+        <toast-notify indication-icon="success" heading="Yay!Everything worked!">
+          <p slot="message" class="toast--message">Congrats on the internet loading request.</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="warning" heading="Attention !">
+          <p slot="message" class="toast--message">Make request according to standard protocol</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="failure" heading="Uh oh ,something went wrong.">
+          <p slot="message" class="toast--message">Sorry!There was a problem with your request</p>
+        </toast-notify>
+      </section>
 
       <section>
         <my-component first="Let's start with" last="WEB COMPONENTS" color="#ff0000"></my-component>
