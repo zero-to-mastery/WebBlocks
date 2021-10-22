@@ -38,7 +38,7 @@ export class SearchBox {
   }
 
   search() {
-    // todo: make get request for real data from database
+    // todo: make get request for real data
   }
 
   updateQueryState(e: Event) {
