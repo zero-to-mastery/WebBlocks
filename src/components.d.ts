@@ -160,7 +160,6 @@ export namespace Components {
   interface ToastNotify {
     Heading: string;
     indicationIcon: string;
-    message: string;
   }
   interface TooltipComponent {
     /**
@@ -464,7 +463,6 @@ declare namespace LocalJSX {
   interface ToastNotify {
     Heading?: string;
     indicationIcon?: string;
-    message?: string;
   }
   interface TooltipComponent {
     /**

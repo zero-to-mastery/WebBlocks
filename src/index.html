@@ -42,10 +42,19 @@
 
       <notification-badge total-notifications="78"></notification-badge>
 
-      <toast-notify indication-icon="success" heading="Yay!Everything worked!" message="Congrats on the internet loading request."></toast-notify>
-      <toast-notify indication-icon="warning" heading="Yay!Everything worked!" message="Congrats on the internet loading request."></toast-notify>
-      <toast-notify indication-icon="failure" heading="Yay!Everything worked!" message="Congrats on the internet loading request."></toast-notify>
-      <toast-notify heading="Yay!Everything worked!" message="Congrats on the internet loading request."></toast-notify>
+      <section>
+        <toast-notify indication-icon="success" heading="Yay!Everything worked!">
+          <p slot="message" class="toast--message">Congrats on the internet loading request.</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="warning" heading="Attention !">
+          <p slot="message" class="toast--message">Make request according to standard protocol</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="failure" heading="Uh oh ,something went wrong.">
+          <p slot="message" class="toast--message">Sorry!There was a problem with your request</p>
+        </toast-notify>
+      </section>
 
       <section>
         <my-component first="Let's start with" last="WEB COMPONENTS" color="#ff0000"></my-component>

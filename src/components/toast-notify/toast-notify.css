@@ -12,7 +12,7 @@
 
 .toast {
   display: flex;
-  padding: 0.5rem 4.5rem;
+  padding: 0.8rem 5rem;
   flex-direction: row;
   margin-bottom: 50px;
   justify-content: center;
@@ -26,21 +26,29 @@
   width: 0.5rem;
   border-radius: 15px;
   height: 60px;
-  position: relative;
-  right: 60px;
   border: none;
+  position: absolute;
+  left: 13px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 33px;
+  width: 40px;
+  height: 40px;
 }
 
 .icon svg {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  right: 29px;
   color: #44cc00;
 }
+
 .toast--main {
-  position: relative;
-  right: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .toast--heading {
@@ -63,8 +71,8 @@
   border-radius: 100%;
   border: none;
   outline: none;
-  position: relative;
-  left: 50px;
+  position: absolute;
+  right: 12px;
   display: flex;
   align-items: center;
   justify-content: center;

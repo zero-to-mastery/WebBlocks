@@ -7,7 +7,6 @@
 | Property         | Attribute         | Description                          | Type     | Default     | Values                       |
 | ---------------- | ----------------- | ------------------------------------ | -------- | ----------- | ---------------------------- |
 | `Heading`        | `heading`         | `Set heading`                        | `string` | `undefined` | `any strings`                |
-| `message`        | `message`         | `Set message`                        | `string` | `undefined` | `any strings`                |
 | `indicationIcon` | `indication-icon` | `Set an icon on toast notification.` | `string` | `undefined` | `success , warning ,failure` |
 
 ---
