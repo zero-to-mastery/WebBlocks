@@ -2,14 +2,13 @@
   display: block;
 }
 
-#badge *{
+#badge * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
-#badge{
+#badge {
   background-color: #e9ecef;
   border: none;
   border-radius: 100px;
@@ -19,11 +18,11 @@
   margin-top: 10px;
 }
 
-#badge span{
-  background-color: #F51720;
+#badge span {
+  background-color: #f51720;
   width: 25px;
   height: 25px;
-  color:#fff;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,17 +34,15 @@
   position: absolute;
 }
 
-#badge :hover{
+#badge :hover {
   cursor: pointer;
 }
 
-#badge:active{
+#badge:active {
   background-color: #cccccc;
 }
-.fa-bell::before{
+.fa-bell::before {
   font-size: 2rem;
   margin-bottom: -100%;
   color: #495057;
 }
-
-
