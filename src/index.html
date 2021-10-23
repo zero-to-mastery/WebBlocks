@@ -14,15 +14,11 @@
 
   <body>
     <nav class="navbar">
-      <div class="nav-logo-div">
-        <img src="assets/img/logo_transparent.png" class="nav-logo" />
-      </div>
       <animated-line-beneath-link text="Home"></animated-line-beneath-link>
       <animated-line-beneath-link text="About"></animated-line-beneath-link>
       <animated-line-beneath-link text="Products"></animated-line-beneath-link>
       <animated-line-beneath-link text="Testimonials"></animated-line-beneath-link>
       <animated-line-beneath-link text="Contact Us"></animated-line-beneath-link>
-      <flowing-colored-border-button>I'm in! 😍</flowing-colored-border-button>
     </nav>
     <header>
       <div style="text-align: center">
@@ -30,16 +26,7 @@
       </div>
     </header>
     <main>
-      <section>
-        <my-component first="Let's start with" last="WEB COMPONENTS" color="#ff0000"></my-component>
-        <my-button width="100px" typeButton="black">My Button</my-button>
-      </section>
 
-      <section>
-        <modal-window heading="Welcome to WebBlocks" confirm-text="Confirm" cancel-text="Cancel" pointer-events="false">
-          <p>Feel free to look around. Detailed documentation will follow soon</p>
-        </modal-window>
-      </section>
 
       <section>
         <data-fetcher></data-fetcher>
@@ -64,7 +51,7 @@
 
         <br />
 
-        <alert-component text="Info Outline" variant="info-outline" action="close" style="background-color: blue"> </alert-component>
+        <alert-component text="Info Outline" variant="info-outline" action="close" style="background-color: rgb(0, 0, 255)"> </alert-component>
       </section>
 
       <section>
@@ -76,9 +63,15 @@
       </section>
       <section style="padding: 30px">
         <emoji-checkbox-component id="test" name="test" checked="false">
-          <checkmark-component check-true="1F315" check-false="1F311"></checkmark-component>
-          <label-component>Hello World!</label-component>
+          <checkmark-component check-true="\1F315" check-false="\1F311"></checkmark-component>
         </emoji-checkbox-component>
+      </section>
+      <div style="text-align: center">
+      <a href="pages/test.html">Click Here</a>
+      <section>
+        <div style="text-align: center">
+        <my-component first="Let's start with" last="WEB COMPONENTS" color="#ff0000"></my-component>
+        <my-button width="100px" typeButtton="black">Custom Button</my-button>
       </section>
     </main>
   </body>
