@@ -10,18 +10,18 @@ describe('search-box', () => {
     expect(page.root).toEqualHtml(`
       <search-box>
         <mock:shadow-root>
-        <form action="/" method="GET" role="search">
-        <div class="rounded-container">
+        <form action="/" class="md" method="GET" role="search">
+        <div class="container rounded">
           <div class="input-container">
             <div class="icon-container">
-              <span class="icon"></span>
+              <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
             </div>
-            <label htmlFor="search-box">Search</label>
             <input
-              placeholder="Enter your search"
+              placeholder=""
               type="text"
               name="search-box"
-              id="search-box"
               maxLength="2048"
               autocomplete="off"
               autoCapitalize="none"

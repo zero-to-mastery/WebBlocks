@@ -160,12 +160,13 @@ export namespace Components {
     }
     interface SearchBox {
         "autocomplete": boolean;
-        "height": string;
+        "dark": boolean;
         "maxLength": number;
         "method": string;
         "placeholder": string;
         "queryURL": string;
-        "width": string;
+        "rectangle": boolean;
+        "size": 'sm' | 'md' | 'lg';
     }
     interface SignInForm {
         "className": string;
@@ -514,12 +515,13 @@ declare namespace LocalJSX {
     }
     interface SearchBox {
         "autocomplete"?: boolean;
-        "height"?: string;
+        "dark"?: boolean;
         "maxLength"?: number;
         "method"?: string;
         "placeholder"?: string;
         "queryURL"?: string;
-        "width"?: string;
+        "rectangle"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
     }
     interface SignInForm {
         "className"?: string;
