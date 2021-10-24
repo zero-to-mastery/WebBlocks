@@ -1,14 +1,14 @@
 :host {
   display: block;
+}
+
+form {
+  width: 100%;
   --font-size: 16px;
   --border-radius: 24px;
   --icon-size: 20px;
   --icon-margin: 8px;
   --suggestion-margin: 5px;
-}
-
-form {
-  width: 100%;
 }
 
 .sm {
@@ -99,6 +99,7 @@ form {
 
 .suggestions {
   max-height: 400px;
+  max-width: 100%;
   overflow-y: scroll;
   background-color: #fff;
   box-shadow: 0 5px 6px 0 rgba(32, 33, 36, 0.28);
