@@ -1,0 +1,129 @@
+:host {
+  display: block;
+}
+
+form {
+  width: 100%;
+  --font-size: 16px;
+  --border-radius: 24px;
+  --icon-size: 20px;
+  --icon-margin: 8px;
+  --suggestion-margin: 5px;
+}
+
+.sm {
+  height: 35px;
+  --icon-size: 15px;
+  --font-size: 14px;
+  --border-radius: 20px;
+}
+
+.md {
+  height: 44px;
+}
+
+.lg {
+  height: 65px;
+  --icon-size: 22px;
+  --font-size: 18px;
+  --border-radius: 32px;
+  --icon-margin: 16px;
+  --suggestion-margin: 10px;
+}
+
+/* 
+  LIGHT THEME
+*/
+.container {
+  border: 1px solid #dfe1e5;
+  display: flex;
+  height: 100%;
+}
+
+.container:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: transparent;
+}
+
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.icon-container {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin: auto var(--icon-margin) auto var(--icon-margin);
+  cursor: pointer;
+}
+
+.search-icon,
+.cancel-icon {
+  color: rgba(32, 33, 36, 0.5);
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-icon:hover,
+.cancel-icon:hover {
+  color: rgba(32, 33, 36, 0.8);
+}
+
+.input-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-container input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  outline: none;
+  font-size: var(--font-size);
+  display: flex;
+  flex: 100%;
+}
+
+.active {
+  background-color: #fff;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: transparent;
+}
+
+.remove-bottom-radius {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.suggestions {
+  max-height: 400px;
+  max-width: 100%;
+  overflow-y: scroll;
+  background-color: #fff;
+  box-shadow: 0 5px 6px 0 rgba(32, 33, 36, 0.28);
+  display: block;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.suggestions > ul {
+  list-style: none;
+  margin-top: 0;
+}
+
+.suggestions > ul > li {
+  font-size: var(--font-size);
+  color: rgba(32, 33, 36, 0.7);
+  margin: var(--suggestion-margin) 0 var(--suggestion-margin) 0;
+  cursor: pointer;
+  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.suggestions > ul > li:hover {
+  color: #000;
+}
+
+/* 
+  todo DARK THEME
+*/
