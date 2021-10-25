@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property          | Attribute          | Description                                   | Type     | Default     |
@@ -12,6 +13,7 @@
 | `position`        | `position`         | Position of tooltip. left, right, top, bottom | `string` | `'top'`     |
 | `text`            | `text`             | Text to be displayed in the tooltip           | `string` | `undefined` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*

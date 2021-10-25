@@ -5,6 +5,7 @@ _\* Note that the code should be used **without** the `U+` prefix._
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description                     | Type      | Default     |
@@ -13,6 +14,7 @@ _\* Note that the code should be used **without** the `U+` prefix._
 | `checkTrue`  | `check-true`  | Checked state emoji HEX code    | `string`  | `undefined` |
 | `checked`    | `checked`     | Checkbox state                  | `boolean` | `false`     |
 
+
 ## CSS Custom Properties
 
 | Name           | Description          |
@@ -20,6 +22,7 @@ _\* Note that the code should be used **without** the `U+` prefix._
 | `--checkFalse` | the un-checked emoji |
 | `--checkTrue`  | the checked emoji    |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
