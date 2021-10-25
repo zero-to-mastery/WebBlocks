@@ -1,0 +1,110 @@
+:host {
+  display: block;
+}
+
+.icon {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.icon:hover {
+  background-color: var(--hovercolorbg) !important;
+  color: var(--hovercolorprimary) !important;
+}
+
+.tooltip {
+  font-family: sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.tooltip p {
+  font-size: 0.75rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #000;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.35rem;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transition: transform 0.1s, opacity 0.1s;
+  opacity: 0;
+}
+
+.tooltip p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  border: 15px solid transparent;
+  border-bottom: 0;
+  border-top: 20px solid #000;
+}
+
+.tooltip.top p {
+  transform: translate(0, 1rem) scale(0);
+}
+
+.tooltip.bottom p {
+  transform: translate(0, 1rem) scale(0);
+}
+
+.tooltip.bottom p::before {
+  top: -0.5rem;
+  transform: rotate(180deg);
+}
+
+.tooltip.top p::before {
+  bottom: -0.35rem;
+}
+
+.icon:hover + p.top {
+  transform: translate(0, -2.5rem) scale(1);
+  opacity: 1;
+}
+
+.icon:hover + p.bottom {
+  transform: translate(0, 3.5rem) scale(1);
+  opacity: 1;
+}
+
+.icon-btn {
+  cursor: pointer;
+}
+
+.icon.s svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.icon.md svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon.l svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon.xl svg {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.icon.square {
+  border-radius: 0.25rem;
+}
+
+.icon.circle {
+  border-radius: 50%;
+}
