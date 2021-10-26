@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property         | Attribute         | Description                          | Type     | Default     | Values                       |
-| ---------------- | ----------------- | ------------------------------------ | -------- | ----------- | ---------------------------- |
-| `Heading`        | `heading`         | `Set heading`                        | `string` | `undefined` | `any strings`                |
-| `indicationIcon` | `indication-icon` | `Set an icon on toast notification.` | `string` | `undefined` | `success , warning ,failure` |
+| Property         | Attribute         | Description | Type     | Default     |
+| ---------------- | ----------------- | ----------- | -------- | ----------- |
+| `Heading`        | `heading`         |             | `string` | `undefined` |
+| `indicationIcon` | `indication-icon` |             | `string` | `undefined` |
 
 ---
 

@@ -99,6 +99,20 @@ export namespace Components {
     imgurl: string;
     width: string;
   }
+  interface IconComponent {
+    background: string;
+    bordercolor: string;
+    bordersize: string;
+    bordertype: string;
+    hovercolorbg: string;
+    hovercolorprimary: string;
+    label: string;
+    name: string;
+    primarycolor: string;
+    size: string;
+    tooltip: string;
+    tooltippos: string;
+  }
   interface ImageComponent {
     srcImg: string;
     srcImgName: string;
@@ -245,6 +259,11 @@ declare global {
     prototype: HTMLHeroComponentElement;
     new (): HTMLHeroComponentElement;
   };
+  interface HTMLIconComponentElement extends Components.IconComponent, HTMLStencilElement {}
+  var HTMLIconComponentElement: {
+    prototype: HTMLIconComponentElement;
+    new (): HTMLIconComponentElement;
+  };
   interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
   var HTMLImageComponentElement: {
     prototype: HTMLImageComponentElement;
@@ -307,6 +326,7 @@ declare global {
     'google-tag-manager': HTMLGoogleTagManagerElement;
     'hamburger-menu': HTMLHamburgerMenuElement;
     'hero-component': HTMLHeroComponentElement;
+    'icon-component': HTMLIconComponentElement;
     'image-component': HTMLImageComponentElement;
     'label-component': HTMLLabelComponentElement;
     'modal-window': HTMLModalWindowElement;
@@ -413,6 +433,20 @@ declare namespace LocalJSX {
     imgurl?: string;
     width?: string;
   }
+  interface IconComponent {
+    background?: string;
+    bordercolor?: string;
+    bordersize?: string;
+    bordertype?: string;
+    hovercolorbg?: string;
+    hovercolorprimary?: string;
+    label?: string;
+    name?: string;
+    primarycolor?: string;
+    size?: string;
+    tooltip?: string;
+    tooltippos?: string;
+  }
   interface ImageComponent {
     srcImg?: string;
     srcImgName?: string;
@@ -514,6 +548,7 @@ declare namespace LocalJSX {
     'google-tag-manager': GoogleTagManager;
     'hamburger-menu': HamburgerMenu;
     'hero-component': HeroComponent;
+    'icon-component': IconComponent;
     'image-component': ImageComponent;
     'label-component': LabelComponent;
     'modal-window': ModalWindow;
@@ -541,6 +576,7 @@ declare module '@stencil/core' {
       'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
       'hamburger-menu': LocalJSX.HamburgerMenu & JSXBase.HTMLAttributes<HTMLHamburgerMenuElement>;
       'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
+      'icon-component': LocalJSX.IconComponent & JSXBase.HTMLAttributes<HTMLIconComponentElement>;
       'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
       'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
       'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
