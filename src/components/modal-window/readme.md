@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property        | Attribute        | Description | Type       | Default     |
@@ -14,7 +13,6 @@
 | `heading`       | `heading`        |             | `string`   | `undefined` |
 | `pointerEvents` | `pointer-events` |             | `boolean`  | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
+_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
