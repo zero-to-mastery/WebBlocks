@@ -54,6 +54,11 @@ export namespace Components {
      */
     variant: 'circular' | 'rounded' | 'square';
   }
+  interface CardComponent {
+    imageURL: string;
+    text: string;
+    title: string;
+  }
   interface CheckmarkComponent {
     /**
      * Un-checked state emoji HEX code
@@ -185,6 +190,11 @@ declare global {
     prototype: HTMLAvatarComponentElement;
     new (): HTMLAvatarComponentElement;
   };
+  interface HTMLCardComponentElement extends Components.CardComponent, HTMLStencilElement {}
+  var HTMLCardComponentElement: {
+    prototype: HTMLCardComponentElement;
+    new (): HTMLCardComponentElement;
+  };
   interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {}
   var HTMLCheckmarkComponentElement: {
     prototype: HTMLCheckmarkComponentElement;
@@ -254,6 +264,7 @@ declare global {
     'alert-component': HTMLAlertComponentElement;
     'animated-line-beneath-link': HTMLAnimatedLineBeneathLinkElement;
     'avatar-component': HTMLAvatarComponentElement;
+    'card-component': HTMLCardComponentElement;
     'checkmark-component': HTMLCheckmarkComponentElement;
     'data-fetcher': HTMLDataFetcherElement;
     'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
@@ -317,6 +328,11 @@ declare namespace LocalJSX {
      * @memberof AvatarComponent
      */
     variant?: 'circular' | 'rounded' | 'square';
+  }
+  interface CardComponent {
+    imageURL?: string;
+    text?: string;
+    title?: string;
   }
   interface CheckmarkComponent {
     /**
@@ -436,6 +452,7 @@ declare namespace LocalJSX {
     'alert-component': AlertComponent;
     'animated-line-beneath-link': AnimatedLineBeneathLink;
     'avatar-component': AvatarComponent;
+    'card-component': CardComponent;
     'checkmark-component': CheckmarkComponent;
     'data-fetcher': DataFetcher;
     'emoji-checkbox-component': EmojiCheckboxComponent;
@@ -458,6 +475,7 @@ declare module '@stencil/core' {
       'alert-component': LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
       'animated-line-beneath-link': LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
       'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+      'card-component': LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
       'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
       'data-fetcher': LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
       'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
