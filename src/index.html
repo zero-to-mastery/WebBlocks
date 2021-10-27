@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="build/webblocks.css" />
     <title>WebBlocks</title>
 
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
     <script type="module" src="build/webblocks.esm.js"></script>
     <script nomodule src="build/webblocks.js"></script>
     <google-tag-manager container-id="YOUR-CONTAINER-ID"></google-tag-manager>
@@ -30,9 +38,25 @@
       </div>
     </header>
     <main>
-      ""
       <section style="width: 50%">
         <search-box />
+      </section>
+      <hamburger-menu></hamburger-menu>
+
+      <notification-badge total-notifications="78"></notification-badge>
+
+      <section>
+        <toast-notify indication-icon="success" heading="Yay!Everything worked!">
+          <p slot="message" class="toast--message">Congrats on the internet loading request.</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="warning" heading="Attention !">
+          <p slot="message" class="toast--message">Make request according to standard protocol</p>
+        </toast-notify>
+
+        <toast-notify indication-icon="failure" heading="Uh oh ,something went wrong.">
+          <p slot="message" class="toast--message">Sorry!There was a problem with your request</p>
+        </toast-notify>
       </section>
 
       <section>
@@ -85,6 +109,29 @@
           <label-component>Hello World!</label-component>
         </emoji-checkbox-component>
       </section>
+
+      <div>
+        <sign-in-form maxLengthEmail="100" minLengthEmail="5" maxLengthPassword="15" minLengthPassword="5" />
+      </div>
+
+      <div>
+        <h4>Hello</h4>
+        <break-component type="br" />
+        <h4>World</h4>
+      </div>
+
+      <icon-component
+        name="apple"
+        label="social-icon"
+        primarycolor="#000"
+        bordersize="2px"
+        bordercolor="#000"
+        bordertype="circle"
+        hovercolorbg="#000"
+        hovercolorprimary="#fff"
+        tooltip="yes"
+        tooltippos="top"
+      />
     </main>
   </body>
 </html>

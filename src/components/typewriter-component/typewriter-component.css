@@ -1,0 +1,8 @@
+.Typer {
+  font-family: sans-serif;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
