@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+Mono&family=Roboto:wght@300&display=swap');
+
+#nav-main * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#nav-main {
+  height: 80px;
+  background-color: #3a4454;
+  width: 100vw;
+}
+
+#nav-main img {
+  display: block;
+  width: 125px;
+  object-fit: cover;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+#nav-main ul {
+  float: right;
+  margin-right: 25px;
+}
+
+#nav-main ul li {
+  display: inline-block;
+  margin-right: 20px;
+  line-height: 80px;
+  list-style: none;
+}
+#nav-main ul li div {
+  display: inline;
+}
+
+#nav-main ul li a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* hamburger design below */
+
+#btns div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 17%;
+}
+
+#bars,
+#cancel {
+  color: white;
+  font-size: 30px;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 1118px) {
+  #nav-main img {
+    left: 8%;
+  }
+}
+
+@media (max-width: 944px) {
+  #nav-main img {
+    left: 6%;
+    width: 110px;
+    margin-bottom: 10px;
+  }
+  #nav-main ul li a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 860px) {
+  #nav-main img {
+    left: 6%;
+    width: 150px;
+  }
+
+  #bars {
+    display: block;
+    margin-right: 20px;
+    font-size: 3rem;
+  }
+
+  #nav-main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    transition: all 0.5s;
+    padding: 10px 0;
+  }
+
+  #nav-main ul {
+    position: relative;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 100%;
+    transition: all 0.5s;
+  }
+
+  #nav-main ul li a {
+    width: 100%;
+    display: block;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  #nav-main ul li :hover {
+    background-color: #54577c;
+    opacity: 0.9;
+  }
+
+  #check:checked ~ #nav-main #btns div #bars {
+    display: none;
+  }
+
+  #check:checked ~ #nav-main #btns div #cancel {
+    display: block;
+  }
+
+  #check:checked ~ #nav-main {
+    height: 15vh;
+  }
+}
