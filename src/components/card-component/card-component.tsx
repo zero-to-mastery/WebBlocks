@@ -7,19 +7,20 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class CardComponent {
   @Prop() imageURL: string;
-  @Prop() title: string;
+  @Prop() cardtitle: string;
   @Prop() text: string;
+  @Prop() price: string;
 
   render() {
     return (
       <Host>
-        <div class="card">
+        <div class={this.price ? 'card product' : 'card'}>
           <div class="img_container">
             <img src={this.imageURL ?? 'https://source.unsplash.com/random'} alt="random image" />
           </div>
           <div class="card_body">
-            <h3>{this.title}</h3>
-            <p>{this.text}</p>
+            <h3>{this.cardtitle}</h3>
+            {this.price ? <p>{this.price}</p> : <p>{this.text}</p>}
           </div>
         </div>
       </Host>

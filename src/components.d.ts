@@ -55,9 +55,10 @@ export namespace Components {
     variant: 'circular' | 'rounded' | 'square';
   }
   interface CardComponent {
+    cardtitle: string;
     imageURL: string;
+    price: string;
     text: string;
-    title: string;
   }
   interface CheckmarkComponent {
     /**
@@ -330,9 +331,10 @@ declare namespace LocalJSX {
     variant?: 'circular' | 'rounded' | 'square';
   }
   interface CardComponent {
+    cardtitle?: string;
     imageURL?: string;
+    price?: string;
     text?: string;
-    title?: string;
   }
   interface CheckmarkComponent {
     /**
