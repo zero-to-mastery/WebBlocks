@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property | Attribute | Description     | Type     | Default     |
@@ -11,6 +12,7 @@
 | `last`   | `last`    | The last name   | `string` | `undefined` |
 | `middle` | `middle`  | The middle name | `string` | `undefined` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*

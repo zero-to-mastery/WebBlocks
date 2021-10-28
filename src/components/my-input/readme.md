@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property       | Attribute       | Description | Type      | Default     |
@@ -13,6 +14,7 @@
 | `placeholder`  | `placeholder`   |             | `string`  | `undefined` |
 | `size`         | `size`          |             | `string`  | `undefined` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
