@@ -48,33 +48,27 @@ export class SimpleCalculator {
   render() {
     return [
       <form onSubmit={e => this.handleSubmit(e)}>
-        <label>
-          Enter First Number:
-          <input type="number" step="any" value={this.value} onInput={event => this.handleChange(event)} />
-        </label>
+        <label htmlFor="firstNumber">Enter First Number: </label>
+        <input id="firstNumber" type="number" step="any" value={this.value} onInput={event => this.handleChange(event)} />
 
-        <label>
-          Enter Second Number:
-          <input type="number" step="any" value={this.value2} onInput={event => this.handleSecondChange(event)} />
-        </label>
+        <label htmlFor="secondNumber"> Enter Second Number: </label>
+        <input id="secondNumber" type="number" step="any" value={this.value2} onInput={event => this.handleSecondChange(event)} />
 
-        <label>
-          Select Operaton to Perform
-          <select onInput={event => this.handleSelect(event)}>
-            <option value="addition" selected={this.selectValue === 'addition'}>
-              Addition
-            </option>
-            <option value="subtraction" selected={this.selectValue === 'subtraction'}>
-              Subtraction
-            </option>
-            <option value="multiplication" selected={this.selectValue === 'multiplication'}>
-              Multiplication
-            </option>
-            <option value="division" selected={this.selectValue === 'division'}>
-              Division
-            </option>
-          </select>
-        </label>
+        <label htmlFor="select"> Select Operaton to Perform</label>
+        <select id="select" onInput={event => this.handleSelect(event)}>
+          <option value="addition" selected={this.selectValue === 'addition'}>
+            Addition
+          </option>
+          <option value="subtraction" selected={this.selectValue === 'subtraction'}>
+            Subtraction
+          </option>
+          <option value="multiplication" selected={this.selectValue === 'multiplication'}>
+            Multiplication
+          </option>
+          <option value="division" selected={this.selectValue === 'division'}>
+            Division
+          </option>
+        </select>
         <input type="submit" value="Submit" />
 
         <p>Result: {this.result}</p>
