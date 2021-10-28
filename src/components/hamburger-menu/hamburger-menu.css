@@ -14,7 +14,7 @@
 
 #nav-main img {
   display: block;
-  width: 125px;
+  width: 150px;
   object-fit: cover;
   position: absolute;
   margin-left: 20px;
@@ -59,9 +59,10 @@
 #bars,
 #cancel {
   color: white;
-  font-size: 30px;
+  font-size: 50px;
   float: right;
   margin-right: 20px;
+  margin-bottom: 30px; 
   cursor: pointer;
   display: none;
 }
@@ -90,13 +91,12 @@
 @media (max-width: 860px) {
   #nav-main img {
     left: 6%;
-    width: 150px;
+    width: 180px;
+    margin-top: 13px;
   }
 
   #bars {
     display: block;
-    margin-right: 20px;
-    font-size: 3rem;
   }
 
   #nav-main {
@@ -124,6 +124,10 @@
     text-align: center;
   }
 
+  #nav-main ul li {
+    margin-left: 70px;
+  }
+
   #nav-main ul li :hover {
     background-color: #54577c;
     opacity: 0.9;
@@ -138,6 +142,9 @@
   }
 
   #check:checked ~ #nav-main {
-    height: 15vh;
+    height: 13vh;
+  }
+  #check:checked ~ #nav-main ul {
+    display: none;
   }
 }
