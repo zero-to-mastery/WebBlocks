@@ -66,7 +66,7 @@ form.dark {
   display: flex;
   height: 100%;
   background-color: var(--background-color);
-  transition: all var(--transition);
+  transition: background-color var(--transition);
 }
 
 .container:hover {
@@ -134,11 +134,14 @@ form.dark {
 .suggestions {
   max-height: 400px;
   max-width: 100%;
+  width: 100%;
   overflow-y: scroll;
   background-color: var(--background-hover);
   box-shadow: 0 5px 6px 0 var(--box-shadow-color);
   display: block;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
+  position: relative;
+  z-index: 1000;
 }
 
 .suggestions > ul {
