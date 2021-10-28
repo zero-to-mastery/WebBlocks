@@ -54,6 +54,11 @@ export namespace Components {
          */
         "variant": 'circular' | 'rounded' | 'square';
     }
+    interface BreakComponent {
+        "horizontalDistance": string;
+        "type": string;
+        "verticalDistance": string;
+    }
     interface CheckmarkComponent {
         /**
           * Un-checked state emoji HEX code
@@ -88,12 +93,28 @@ export namespace Components {
          */
         "containerId": string;
     }
+    interface HamburgerMenu {
+    }
     interface HeroComponent {
         "background": string;
         "heading": string;
         "height": string;
         "imgurl": string;
         "width": string;
+    }
+    interface IconComponent {
+        "background": string;
+        "bordercolor": string;
+        "bordersize": string;
+        "bordertype": string;
+        "hovercolorbg": string;
+        "hovercolorprimary": string;
+        "label": string;
+        "name": string;
+        "primarycolor": string;
+        "size": string;
+        "tooltip": string;
+        "tooltippos": string;
     }
     interface ImageComponent {
         "srcImg": string;
@@ -148,6 +169,9 @@ export namespace Components {
         "placeholder": string;
         "size": string;
     }
+    interface NotificationBadge {
+        "totalNotifications": string;
+    }
     interface SearchBox {
         "autocomplete": boolean;
         "dark": boolean;
@@ -157,6 +181,23 @@ export namespace Components {
         "queryURL": string;
         "rectangle": boolean;
         "size": 'sm' | 'md' | 'lg';
+    }
+    interface SignInForm {
+        "className": string;
+        "maxLengthEmail": string;
+        "maxLengthPassword": string;
+        "minLengthEmail": string;
+        "minLengthPassword": string;
+    }
+    interface TextStyle {
+        "bold": string;
+        "className": string;
+        "fontWeight": string;
+        "italic": string;
+    }
+    interface ToastNotify {
+        "Heading": string;
+        "indicationIcon": string;
     }
     interface TooltipComponent {
         /**
@@ -200,6 +241,12 @@ declare global {
         prototype: HTMLAvatarComponentElement;
         new (): HTMLAvatarComponentElement;
     };
+    interface HTMLBreakComponentElement extends Components.BreakComponent, HTMLStencilElement {
+    }
+    var HTMLBreakComponentElement: {
+        prototype: HTMLBreakComponentElement;
+        new (): HTMLBreakComponentElement;
+    };
     interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {
     }
     var HTMLCheckmarkComponentElement: {
@@ -230,11 +277,23 @@ declare global {
         prototype: HTMLGoogleTagManagerElement;
         new (): HTMLGoogleTagManagerElement;
     };
+    interface HTMLHamburgerMenuElement extends Components.HamburgerMenu, HTMLStencilElement {
+    }
+    var HTMLHamburgerMenuElement: {
+        prototype: HTMLHamburgerMenuElement;
+        new (): HTMLHamburgerMenuElement;
+    };
     interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {
     }
     var HTMLHeroComponentElement: {
         prototype: HTMLHeroComponentElement;
         new (): HTMLHeroComponentElement;
+    };
+    interface HTMLIconComponentElement extends Components.IconComponent, HTMLStencilElement {
+    }
+    var HTMLIconComponentElement: {
+        prototype: HTMLIconComponentElement;
+        new (): HTMLIconComponentElement;
     };
     interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {
     }
@@ -272,11 +331,35 @@ declare global {
         prototype: HTMLMyInputElement;
         new (): HTMLMyInputElement;
     };
+    interface HTMLNotificationBadgeElement extends Components.NotificationBadge, HTMLStencilElement {
+    }
+    var HTMLNotificationBadgeElement: {
+        prototype: HTMLNotificationBadgeElement;
+        new (): HTMLNotificationBadgeElement;
+    };
     interface HTMLSearchBoxElement extends Components.SearchBox, HTMLStencilElement {
     }
     var HTMLSearchBoxElement: {
         prototype: HTMLSearchBoxElement;
         new (): HTMLSearchBoxElement;
+    };
+    interface HTMLSignInFormElement extends Components.SignInForm, HTMLStencilElement {
+    }
+    var HTMLSignInFormElement: {
+        prototype: HTMLSignInFormElement;
+        new (): HTMLSignInFormElement;
+    };
+    interface HTMLTextStyleElement extends Components.TextStyle, HTMLStencilElement {
+    }
+    var HTMLTextStyleElement: {
+        prototype: HTMLTextStyleElement;
+        new (): HTMLTextStyleElement;
+    };
+    interface HTMLToastNotifyElement extends Components.ToastNotify, HTMLStencilElement {
+    }
+    var HTMLToastNotifyElement: {
+        prototype: HTMLToastNotifyElement;
+        new (): HTMLToastNotifyElement;
     };
     interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {
     }
@@ -288,19 +371,26 @@ declare global {
         "alert-component": HTMLAlertComponentElement;
         "animated-line-beneath-link": HTMLAnimatedLineBeneathLinkElement;
         "avatar-component": HTMLAvatarComponentElement;
+        "break-component": HTMLBreakComponentElement;
         "checkmark-component": HTMLCheckmarkComponentElement;
         "data-fetcher": HTMLDataFetcherElement;
         "emoji-checkbox-component": HTMLEmojiCheckboxComponentElement;
         "flowing-colored-border-button": HTMLFlowingColoredBorderButtonElement;
         "google-tag-manager": HTMLGoogleTagManagerElement;
+        "hamburger-menu": HTMLHamburgerMenuElement;
         "hero-component": HTMLHeroComponentElement;
+        "icon-component": HTMLIconComponentElement;
         "image-component": HTMLImageComponentElement;
         "label-component": HTMLLabelComponentElement;
         "modal-window": HTMLModalWindowElement;
         "my-button": HTMLMyButtonElement;
         "my-component": HTMLMyComponentElement;
         "my-input": HTMLMyInputElement;
+        "notification-badge": HTMLNotificationBadgeElement;
         "search-box": HTMLSearchBoxElement;
+        "sign-in-form": HTMLSignInFormElement;
+        "text-style": HTMLTextStyleElement;
+        "toast-notify": HTMLToastNotifyElement;
         "tooltip-component": HTMLTooltipComponentElement;
     }
 }
@@ -353,6 +443,11 @@ declare namespace LocalJSX {
          */
         "variant"?: 'circular' | 'rounded' | 'square';
     }
+    interface BreakComponent {
+        "horizontalDistance"?: string;
+        "type"?: string;
+        "verticalDistance"?: string;
+    }
     interface CheckmarkComponent {
         /**
           * Un-checked state emoji HEX code
@@ -387,12 +482,28 @@ declare namespace LocalJSX {
          */
         "containerId"?: string;
     }
+    interface HamburgerMenu {
+    }
     interface HeroComponent {
         "background"?: string;
         "heading"?: string;
         "height"?: string;
         "imgurl"?: string;
         "width"?: string;
+    }
+    interface IconComponent {
+        "background"?: string;
+        "bordercolor"?: string;
+        "bordersize"?: string;
+        "bordertype"?: string;
+        "hovercolorbg"?: string;
+        "hovercolorprimary"?: string;
+        "label"?: string;
+        "name"?: string;
+        "primarycolor"?: string;
+        "size"?: string;
+        "tooltip"?: string;
+        "tooltippos"?: string;
     }
     interface ImageComponent {
         "srcImg"?: string;
@@ -447,6 +558,9 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "size"?: string;
     }
+    interface NotificationBadge {
+        "totalNotifications"?: string;
+    }
     interface SearchBox {
         "autocomplete"?: boolean;
         "dark"?: boolean;
@@ -456,6 +570,23 @@ declare namespace LocalJSX {
         "queryURL"?: string;
         "rectangle"?: boolean;
         "size"?: 'sm' | 'md' | 'lg';
+    }
+    interface SignInForm {
+        "className"?: string;
+        "maxLengthEmail"?: string;
+        "maxLengthPassword"?: string;
+        "minLengthEmail"?: string;
+        "minLengthPassword"?: string;
+    }
+    interface TextStyle {
+        "bold"?: string;
+        "className"?: string;
+        "fontWeight"?: string;
+        "italic"?: string;
+    }
+    interface ToastNotify {
+        "Heading"?: string;
+        "indicationIcon"?: string;
     }
     interface TooltipComponent {
         /**
@@ -483,19 +614,26 @@ declare namespace LocalJSX {
         "alert-component": AlertComponent;
         "animated-line-beneath-link": AnimatedLineBeneathLink;
         "avatar-component": AvatarComponent;
+        "break-component": BreakComponent;
         "checkmark-component": CheckmarkComponent;
         "data-fetcher": DataFetcher;
         "emoji-checkbox-component": EmojiCheckboxComponent;
         "flowing-colored-border-button": FlowingColoredBorderButton;
         "google-tag-manager": GoogleTagManager;
+        "hamburger-menu": HamburgerMenu;
         "hero-component": HeroComponent;
+        "icon-component": IconComponent;
         "image-component": ImageComponent;
         "label-component": LabelComponent;
         "modal-window": ModalWindow;
         "my-button": MyButton;
         "my-component": MyComponent;
         "my-input": MyInput;
+        "notification-badge": NotificationBadge;
         "search-box": SearchBox;
+        "sign-in-form": SignInForm;
+        "text-style": TextStyle;
+        "toast-notify": ToastNotify;
         "tooltip-component": TooltipComponent;
     }
 }
@@ -506,19 +644,26 @@ declare module "@stencil/core" {
             "alert-component": LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
             "animated-line-beneath-link": LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
             "avatar-component": LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+            "break-component": LocalJSX.BreakComponent & JSXBase.HTMLAttributes<HTMLBreakComponentElement>;
             "checkmark-component": LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
             "data-fetcher": LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
             "emoji-checkbox-component": LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
             "flowing-colored-border-button": LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
             "google-tag-manager": LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+            "hamburger-menu": LocalJSX.HamburgerMenu & JSXBase.HTMLAttributes<HTMLHamburgerMenuElement>;
             "hero-component": LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
+            "icon-component": LocalJSX.IconComponent & JSXBase.HTMLAttributes<HTMLIconComponentElement>;
             "image-component": LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
             "label-component": LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
             "modal-window": LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
             "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+            "notification-badge": LocalJSX.NotificationBadge & JSXBase.HTMLAttributes<HTMLNotificationBadgeElement>;
             "search-box": LocalJSX.SearchBox & JSXBase.HTMLAttributes<HTMLSearchBoxElement>;
+            "sign-in-form": LocalJSX.SignInForm & JSXBase.HTMLAttributes<HTMLSignInFormElement>;
+            "text-style": LocalJSX.TextStyle & JSXBase.HTMLAttributes<HTMLTextStyleElement>;
+            "toast-notify": LocalJSX.ToastNotify & JSXBase.HTMLAttributes<HTMLToastNotifyElement>;
             "tooltip-component": LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
         }
     }
