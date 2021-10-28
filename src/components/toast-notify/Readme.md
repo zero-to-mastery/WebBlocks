@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+> > > > > > > 011d1c6f292f49df7e6c6fb125874699715bbce3
 
 ## Properties
 
@@ -11,6 +12,17 @@
 | `indicationIcon` | `indication-icon` |             | `string` | `undefined` |
 
 
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
+
+---
+
+# _Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+
+---
+
+_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+
+> > > > > > > 011d1c6f292f49df7e6c6fb125874699715bbce3
