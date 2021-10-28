@@ -9,6 +9,33 @@ form {
   --icon-size: 20px;
   --icon-margin: 8px;
   --suggestion-margin: 5px;
+  --border: 1px solid var(--background-color);
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+form.light {
+  --box-shadow-color: rgba(32, 33, 36, 0.28);
+  --box-shadow: 0 1px 6px var(--box-shadow-color);
+  --background-color: #dfe1e5;
+  --background-hover: #ffffff;
+  --border-color: transparent;
+  --icon-color: rgba(32, 33, 36, 0.5);
+  --icon-hover: rgba(32, 33, 36, 0.8);
+  --suggestion-color: rgba(32, 33, 36, 0.7);
+  --suggestion-hover: #000000;
+  --font-color: #000000;
+}
+
+form.dark {
+  --background-color: #202124;
+  --background-hover: #303134;
+  --box-shadow: 0 1px 6px 0 #171717;
+  --border-color: rgba(223, 225, 229, 0);
+  --icon-color: #bdc1c6;
+  --icon-hover: #e5eaf0;
+  --suggestion-color: var(--icon-color);
+  --suggestion-hover: #ffffff;
+  --font-color: #ffffff;
 }
 
 .sm {
@@ -35,19 +62,25 @@ form {
   LIGHT THEME
 */
 .container {
-  border: 1px solid #dfe1e5;
+  border: var(--border);
   display: flex;
   height: 100%;
+  background-color: var(--background-color);
+  transition: all var(--transition);
 }
 
 .container:hover {
-  background-color: #fff;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  border-color: transparent;
+  background-color: var(--background-hover);
+  box-shadow: var(--box-shadow);
+  border-color: var(--border-color);
 }
 
 .rounded {
   border-radius: var(--border-radius);
+}
+
+.rectangle {
+  border-radius: 0;
 }
 
 .icon-container {
@@ -59,13 +92,13 @@ form {
 
 .search-icon,
 .cancel-icon {
-  color: rgba(32, 33, 36, 0.5);
-  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--icon-color);
+  transition: color var(--transition);
 }
 
 .search-icon:hover,
 .cancel-icon:hover {
-  color: rgba(32, 33, 36, 0.8);
+  color: var(--icon-hover);
 }
 
 .input-container {
@@ -82,13 +115,14 @@ form {
   word-wrap: break-word;
   outline: none;
   font-size: var(--font-size);
+  color: var(--font-color);
   display: flex;
   flex: 100%;
 }
 
 .active {
-  background-color: #fff;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  background-color: var(--background-hover);
+  box-shadow: var(--box-shadow);
   border-color: transparent;
 }
 
@@ -101,8 +135,8 @@ form {
   max-height: 400px;
   max-width: 100%;
   overflow-y: scroll;
-  background-color: #fff;
-  box-shadow: 0 5px 6px 0 rgba(32, 33, 36, 0.28);
+  background-color: var(--background-hover);
+  box-shadow: 0 5px 6px 0 var(--box-shadow-color);
   display: block;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
@@ -114,16 +148,12 @@ form {
 
 .suggestions > ul > li {
   font-size: var(--font-size);
-  color: rgba(32, 33, 36, 0.7);
+  color: var(--suggestion-color);
   margin: var(--suggestion-margin) 0 var(--suggestion-margin) 0;
   cursor: pointer;
-  transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition);
 }
 
 .suggestions > ul > li:hover {
-  color: #000;
+  color: var(--suggestion-hover);
 }
-
-/* 
-  todo DARK THEME
-*/
