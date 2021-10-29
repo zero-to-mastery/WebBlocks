@@ -1,3 +1,11 @@
+.loader_bg{
+    background: #18243e url(https://miro.medium.com/max/489/0*NfFRP_WMxD-XT14o.gif) no-repeat center center;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
