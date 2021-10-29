@@ -172,12 +172,28 @@ export namespace Components {
     interface NotificationBadge {
         "totalNotifications": string;
     }
+    interface SearchBox {
+        "autocomplete": boolean;
+        "dark": boolean;
+        "maxLength": number;
+        "method": string;
+        "placeholder": string;
+        "queryURL": string;
+        "rectangle": boolean;
+        "size": 'sm' | 'md' | 'lg';
+    }
     interface SignInForm {
         "className": string;
         "maxLengthEmail": string;
         "maxLengthPassword": string;
         "minLengthEmail": string;
         "minLengthPassword": string;
+    }
+    interface TextStyle {
+        "bold": string;
+        "className": string;
+        "fontWeight": string;
+        "italic": string;
     }
     interface ToastNotify {
         "Heading": string;
@@ -321,11 +337,23 @@ declare global {
         prototype: HTMLNotificationBadgeElement;
         new (): HTMLNotificationBadgeElement;
     };
+    interface HTMLSearchBoxElement extends Components.SearchBox, HTMLStencilElement {
+    }
+    var HTMLSearchBoxElement: {
+        prototype: HTMLSearchBoxElement;
+        new (): HTMLSearchBoxElement;
+    };
     interface HTMLSignInFormElement extends Components.SignInForm, HTMLStencilElement {
     }
     var HTMLSignInFormElement: {
         prototype: HTMLSignInFormElement;
         new (): HTMLSignInFormElement;
+    };
+    interface HTMLTextStyleElement extends Components.TextStyle, HTMLStencilElement {
+    }
+    var HTMLTextStyleElement: {
+        prototype: HTMLTextStyleElement;
+        new (): HTMLTextStyleElement;
     };
     interface HTMLToastNotifyElement extends Components.ToastNotify, HTMLStencilElement {
     }
@@ -360,6 +388,9 @@ declare global {
         "my-input": HTMLMyInputElement;
         "notification-badge": HTMLNotificationBadgeElement;
         "sign-in-form": HTMLSignInFormElement;
+        "search-box": HTMLSearchBoxElement;
+        "sign-in-form": HTMLSignInFormElement;
+        "text-style": HTMLTextStyleElement;
         "toast-notify": HTMLToastNotifyElement;
         "tooltip-component": HTMLTooltipComponentElement;
     }
@@ -531,12 +562,28 @@ declare namespace LocalJSX {
     interface NotificationBadge {
         "totalNotifications"?: string;
     }
+    interface SearchBox {
+        "autocomplete"?: boolean;
+        "dark"?: boolean;
+        "maxLength"?: number;
+        "method"?: string;
+        "placeholder"?: string;
+        "queryURL"?: string;
+        "rectangle"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
+    }
     interface SignInForm {
         "className"?: string;
         "maxLengthEmail"?: string;
         "maxLengthPassword"?: string;
         "minLengthEmail"?: string;
         "minLengthPassword"?: string;
+    }
+    interface TextStyle {
+        "bold"?: string;
+        "className"?: string;
+        "fontWeight"?: string;
+        "italic"?: string;
     }
     interface ToastNotify {
         "Heading"?: string;
@@ -585,6 +632,9 @@ declare namespace LocalJSX {
         "my-input": MyInput;
         "notification-badge": NotificationBadge;
         "sign-in-form": SignInForm;
+        "search-box": SearchBox;
+        "sign-in-form": SignInForm;
+        "text-style": TextStyle;
         "toast-notify": ToastNotify;
         "tooltip-component": TooltipComponent;
     }
@@ -613,6 +663,9 @@ declare module "@stencil/core" {
             "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
             "notification-badge": LocalJSX.NotificationBadge & JSXBase.HTMLAttributes<HTMLNotificationBadgeElement>;
             "sign-in-form": LocalJSX.SignInForm & JSXBase.HTMLAttributes<HTMLSignInFormElement>;
+            "search-box": LocalJSX.SearchBox & JSXBase.HTMLAttributes<HTMLSearchBoxElement>;
+            "sign-in-form": LocalJSX.SignInForm & JSXBase.HTMLAttributes<HTMLSignInFormElement>;
+            "text-style": LocalJSX.TextStyle & JSXBase.HTMLAttributes<HTMLTextStyleElement>;
             "toast-notify": LocalJSX.ToastNotify & JSXBase.HTMLAttributes<HTMLToastNotifyElement>;
             "tooltip-component": LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
         }
@@ -791,325 +844,448 @@ declare module "@stencil/core" {
   }
 }
 declare global {
-  interface HTMLAlertComponentElement extends Components.AlertComponent, HTMLStencilElement {}
-  var HTMLAlertComponentElement: {
-    prototype: HTMLAlertComponentElement;
-    new (): HTMLAlertComponentElement;
-  };
-  interface HTMLAnimatedLineBeneathLinkElement extends Components.AnimatedLineBeneathLink, HTMLStencilElement {}
-  var HTMLAnimatedLineBeneathLinkElement: {
-    prototype: HTMLAnimatedLineBeneathLinkElement;
-    new (): HTMLAnimatedLineBeneathLinkElement;
-  };
-  interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {}
-  var HTMLAvatarComponentElement: {
-    prototype: HTMLAvatarComponentElement;
-    new (): HTMLAvatarComponentElement;
-  };
-  interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {}
-  var HTMLCheckmarkComponentElement: {
-    prototype: HTMLCheckmarkComponentElement;
-    new (): HTMLCheckmarkComponentElement;
-  };
-  interface HTMLDataFetcherElement extends Components.DataFetcher, HTMLStencilElement {}
-  var HTMLDataFetcherElement: {
-    prototype: HTMLDataFetcherElement;
-    new (): HTMLDataFetcherElement;
-  };
-  interface HTMLEmojiCheckboxComponentElement extends Components.EmojiCheckboxComponent, HTMLStencilElement {}
-  var HTMLEmojiCheckboxComponentElement: {
-    prototype: HTMLEmojiCheckboxComponentElement;
-    new (): HTMLEmojiCheckboxComponentElement;
-  };
-  interface HTMLFlowingColoredBorderButtonElement extends Components.FlowingColoredBorderButton, HTMLStencilElement {}
-  var HTMLFlowingColoredBorderButtonElement: {
-    prototype: HTMLFlowingColoredBorderButtonElement;
-    new (): HTMLFlowingColoredBorderButtonElement;
-  };
-  interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {}
-  var HTMLGoogleTagManagerElement: {
-    prototype: HTMLGoogleTagManagerElement;
-    new (): HTMLGoogleTagManagerElement;
-  };
-  interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {}
-  var HTMLHeroComponentElement: {
-    prototype: HTMLHeroComponentElement;
-    new (): HTMLHeroComponentElement;
-  };
-  interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {}
-  var HTMLImageComponentElement: {
-    prototype: HTMLImageComponentElement;
-    new (): HTMLImageComponentElement;
-  };
-  interface HTMLLabelComponentElement extends Components.LabelComponent, HTMLStencilElement {}
-  var HTMLLabelComponentElement: {
-    prototype: HTMLLabelComponentElement;
-    new (): HTMLLabelComponentElement;
-  };
-  interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {}
-  var HTMLModalWindowElement: {
-    prototype: HTMLModalWindowElement;
-    new (): HTMLModalWindowElement;
-  };
-  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
-  var HTMLMyButtonElement: {
-    prototype: HTMLMyButtonElement;
-    new (): HTMLMyButtonElement;
-  };
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-  interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {}
-  var HTMLMyInputElement: {
-    prototype: HTMLMyInputElement;
-    new (): HTMLMyInputElement;
-  };
-  interface HTMLSearchBoxElement extends Components.SearchBox, HTMLStencilElement {}
-  var HTMLSearchBoxElement: {
-    prototype: HTMLSearchBoxElement;
-    new (): HTMLSearchBoxElement;
-  };
-  interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {}
-  var HTMLTooltipComponentElement: {
-    prototype: HTMLTooltipComponentElement;
-    new (): HTMLTooltipComponentElement;
-  };
-  interface HTMLElementTagNameMap {
-    'alert-component': HTMLAlertComponentElement;
-    'animated-line-beneath-link': HTMLAnimatedLineBeneathLinkElement;
-    'avatar-component': HTMLAvatarComponentElement;
-    'checkmark-component': HTMLCheckmarkComponentElement;
-    'data-fetcher': HTMLDataFetcherElement;
-    'emoji-checkbox-component': HTMLEmojiCheckboxComponentElement;
-    'flowing-colored-border-button': HTMLFlowingColoredBorderButtonElement;
-    'google-tag-manager': HTMLGoogleTagManagerElement;
-    'hero-component': HTMLHeroComponentElement;
-    'image-component': HTMLImageComponentElement;
-    'label-component': HTMLLabelComponentElement;
-    'modal-window': HTMLModalWindowElement;
-    'my-button': HTMLMyButtonElement;
-    'my-component': HTMLMyComponentElement;
-    'my-input': HTMLMyInputElement;
-    'search-box': HTMLSearchBoxElement;
-    'tooltip-component': HTMLTooltipComponentElement;
-  }
+    interface HTMLAlertComponentElement extends Components.AlertComponent, HTMLStencilElement {
+    }
+    var HTMLAlertComponentElement: {
+        prototype: HTMLAlertComponentElement;
+        new (): HTMLAlertComponentElement;
+    };
+    interface HTMLAnimatedLineBeneathLinkElement extends Components.AnimatedLineBeneathLink, HTMLStencilElement {
+    }
+    var HTMLAnimatedLineBeneathLinkElement: {
+        prototype: HTMLAnimatedLineBeneathLinkElement;
+        new (): HTMLAnimatedLineBeneathLinkElement;
+    };
+    interface HTMLAvatarComponentElement extends Components.AvatarComponent, HTMLStencilElement {
+    }
+    var HTMLAvatarComponentElement: {
+        prototype: HTMLAvatarComponentElement;
+        new (): HTMLAvatarComponentElement;
+    };
+    interface HTMLBreakComponentElement extends Components.BreakComponent, HTMLStencilElement {
+    }
+    var HTMLBreakComponentElement: {
+        prototype: HTMLBreakComponentElement;
+        new (): HTMLBreakComponentElement;
+    };
+    interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {
+    }
+    var HTMLCheckmarkComponentElement: {
+        prototype: HTMLCheckmarkComponentElement;
+        new (): HTMLCheckmarkComponentElement;
+    };
+    interface HTMLDataFetcherElement extends Components.DataFetcher, HTMLStencilElement {
+    }
+    var HTMLDataFetcherElement: {
+        prototype: HTMLDataFetcherElement;
+        new (): HTMLDataFetcherElement;
+    };
+    interface HTMLEmojiCheckboxComponentElement extends Components.EmojiCheckboxComponent, HTMLStencilElement {
+    }
+    var HTMLEmojiCheckboxComponentElement: {
+        prototype: HTMLEmojiCheckboxComponentElement;
+        new (): HTMLEmojiCheckboxComponentElement;
+    };
+    interface HTMLFlowingColoredBorderButtonElement extends Components.FlowingColoredBorderButton, HTMLStencilElement {
+    }
+    var HTMLFlowingColoredBorderButtonElement: {
+        prototype: HTMLFlowingColoredBorderButtonElement;
+        new (): HTMLFlowingColoredBorderButtonElement;
+    };
+    interface HTMLGoogleTagManagerElement extends Components.GoogleTagManager, HTMLStencilElement {
+    }
+    var HTMLGoogleTagManagerElement: {
+        prototype: HTMLGoogleTagManagerElement;
+        new (): HTMLGoogleTagManagerElement;
+    };
+    interface HTMLHamburgerMenuElement extends Components.HamburgerMenu, HTMLStencilElement {
+    }
+    var HTMLHamburgerMenuElement: {
+        prototype: HTMLHamburgerMenuElement;
+        new (): HTMLHamburgerMenuElement;
+    };
+    interface HTMLHeroComponentElement extends Components.HeroComponent, HTMLStencilElement {
+    }
+    var HTMLHeroComponentElement: {
+        prototype: HTMLHeroComponentElement;
+        new (): HTMLHeroComponentElement;
+    };
+    interface HTMLIconComponentElement extends Components.IconComponent, HTMLStencilElement {
+    }
+    var HTMLIconComponentElement: {
+        prototype: HTMLIconComponentElement;
+        new (): HTMLIconComponentElement;
+    };
+    interface HTMLImageComponentElement extends Components.ImageComponent, HTMLStencilElement {
+    }
+    var HTMLImageComponentElement: {
+        prototype: HTMLImageComponentElement;
+        new (): HTMLImageComponentElement;
+    };
+    interface HTMLLabelComponentElement extends Components.LabelComponent, HTMLStencilElement {
+    }
+    var HTMLLabelComponentElement: {
+        prototype: HTMLLabelComponentElement;
+        new (): HTMLLabelComponentElement;
+    };
+    interface HTMLModalWindowElement extends Components.ModalWindow, HTMLStencilElement {
+    }
+    var HTMLModalWindowElement: {
+        prototype: HTMLModalWindowElement;
+        new (): HTMLModalWindowElement;
+    };
+    interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
+    }
+    var HTMLMyButtonElement: {
+        prototype: HTMLMyButtonElement;
+        new (): HTMLMyButtonElement;
+    };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
+    interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {
+    }
+    var HTMLMyInputElement: {
+        prototype: HTMLMyInputElement;
+        new (): HTMLMyInputElement;
+    };
+    interface HTMLNotificationBadgeElement extends Components.NotificationBadge, HTMLStencilElement {
+    }
+    var HTMLNotificationBadgeElement: {
+        prototype: HTMLNotificationBadgeElement;
+        new (): HTMLNotificationBadgeElement;
+    };
+    interface HTMLSearchBoxElement extends Components.SearchBox, HTMLStencilElement {
+    }
+    var HTMLSearchBoxElement: {
+        prototype: HTMLSearchBoxElement;
+        new (): HTMLSearchBoxElement;
+    };
+    interface HTMLSignInFormElement extends Components.SignInForm, HTMLStencilElement {
+    }
+    var HTMLSignInFormElement: {
+        prototype: HTMLSignInFormElement;
+        new (): HTMLSignInFormElement;
+    };
+    interface HTMLTextStyleElement extends Components.TextStyle, HTMLStencilElement {
+    }
+    var HTMLTextStyleElement: {
+        prototype: HTMLTextStyleElement;
+        new (): HTMLTextStyleElement;
+    };
+    interface HTMLToastNotifyElement extends Components.ToastNotify, HTMLStencilElement {
+    }
+    var HTMLToastNotifyElement: {
+        prototype: HTMLToastNotifyElement;
+        new (): HTMLToastNotifyElement;
+    };
+    interface HTMLTooltipComponentElement extends Components.TooltipComponent, HTMLStencilElement {
+    }
+    var HTMLTooltipComponentElement: {
+        prototype: HTMLTooltipComponentElement;
+        new (): HTMLTooltipComponentElement;
+    };
+    interface HTMLElementTagNameMap {
+        "alert-component": HTMLAlertComponentElement;
+        "animated-line-beneath-link": HTMLAnimatedLineBeneathLinkElement;
+        "avatar-component": HTMLAvatarComponentElement;
+        "break-component": HTMLBreakComponentElement;
+        "checkmark-component": HTMLCheckmarkComponentElement;
+        "data-fetcher": HTMLDataFetcherElement;
+        "emoji-checkbox-component": HTMLEmojiCheckboxComponentElement;
+        "flowing-colored-border-button": HTMLFlowingColoredBorderButtonElement;
+        "google-tag-manager": HTMLGoogleTagManagerElement;
+        "hamburger-menu": HTMLHamburgerMenuElement;
+        "hero-component": HTMLHeroComponentElement;
+        "icon-component": HTMLIconComponentElement;
+        "image-component": HTMLImageComponentElement;
+        "label-component": HTMLLabelComponentElement;
+        "modal-window": HTMLModalWindowElement;
+        "my-button": HTMLMyButtonElement;
+        "my-component": HTMLMyComponentElement;
+        "my-input": HTMLMyInputElement;
+        "notification-badge": HTMLNotificationBadgeElement;
+        "search-box": HTMLSearchBoxElement;
+        "sign-in-form": HTMLSignInFormElement;
+        "text-style": HTMLTextStyleElement;
+        "toast-notify": HTMLToastNotifyElement;
+        "tooltip-component": HTMLTooltipComponentElement;
+    }
 }
 declare namespace LocalJSX {
-  interface AlertComponent {
-    action?: string;
-    icon?: string;
-    text?: string;
-    variant?: string;
-    width?: string;
-  }
-  interface AnimatedLineBeneathLink {
-    text?: string;
-  }
-  interface AvatarComponent {
-    /**
-     * Alternate text when src image breaks
-     * @type {string}
-     * @memberof AvatarComponent
-     */
-    alt?: string;
-    /**
-     * Custom class for the image
-     * @type {string}
-     * @memberof AvatarComponent
-     */
-    customClass?: string;
-    /**
-     * Avatar image size
-     * @type {('small' | 'medium' | 'large')}
-     * @memberof AvatarComponent
-     */
-    size?: 'small' | 'medium' | 'large';
-    /**
-     * Image source url
-     * @type {string}
-     * @memberof AvatarComponent
-     */
-    src?: string;
-    /**
-     * Show title of the image on hover
-     * @type {string}
-     * @memberof AvatarComponent
-     */
-    tooltipTxt?: string;
-    /**
-     * Avatar image shape variants
-     * @type {('circular' | 'rounded' | 'square')}
-     * @memberof AvatarComponent
-     */
-    variant?: 'circular' | 'rounded' | 'square';
-  }
-  interface CheckmarkComponent {
-    /**
-     * Un-checked state emoji HEX code
-     */
-    checkFalse?: string;
-    /**
-     * Checked state emoji HEX code
-     */
-    checkTrue?: string;
-    /**
-     * Checkbox state
-     */
-    checked?: boolean;
-  }
-  interface DataFetcher {}
-  interface EmojiCheckboxComponent {
-    /**
-     * The initial state of checkbox
-     */
-    checked?: boolean;
-    /**
-     * Checkbox name
-     */
-    name?: string;
-  }
-  interface FlowingColoredBorderButton {}
-  interface GoogleTagManager {
-    /**
-     * The google tag manage container ID
-     */
-    containerId?: string;
-  }
-  interface HeroComponent {
-    background?: string;
-    heading?: string;
-    height?: string;
-    imgurl?: string;
-    width?: string;
-  }
-  interface ImageComponent {
-    srcImg?: string;
-    srcImgName?: string;
-    srcNextGen?: string;
-  }
-  interface LabelComponent {
-    /**
-     * Checkbox state
-     */
-    checked?: boolean;
-  }
-  interface ModalWindow {
-    cancelText?: string;
-    confirmText?: string;
-    handleCancel?: Function;
-    handleConfirm?: Function;
-    heading?: string;
-    pointerEvents?: boolean;
-  }
-  interface MyButton {
-    color?: string;
-    icon?: string;
-    name?: string;
-    type?: string;
-    typeButton?: string;
-    width?: string;
-  }
-  interface MyComponent {
-    /**
-     * The text color
-     */
-    color?: string;
-    /**
-     * The first name
-     */
-    first?: string;
-    /**
-     * The last name
-     */
-    last?: string;
-    /**
-     * The middle name
-     */
-    middle?: string;
-  }
-  interface MyInput {
-    bordered?: boolean;
-    defaultValue?: string;
-    disabled?: boolean;
-    pattern?: string;
-    placeholder?: string;
-    size?: string;
-  }
-  interface SearchBox {
-    autocomplete?: boolean;
-    dark?: boolean;
-    maxLength?: number;
-    method?: string;
-    placeholder?: string;
-    queryURL?: string;
-    rectangle?: boolean;
-    size?: 'sm' | 'md' | 'lg';
-  }
-  interface TooltipComponent {
-    /**
-     * Background color
-     */
-    backgroundColor?: string;
-    /**
-     * Text color
-     */
-    color?: string;
-    /**
-     * Font size
-     */
-    fontSize?: string;
-    /**
-     * Position of tooltip. left, right, top, bottom
-     */
-    position?: string;
-    /**
-     * Text to be displayed in the tooltip
-     */
-    text?: string;
-  }
-  interface IntrinsicElements {
-    'alert-component': AlertComponent;
-    'animated-line-beneath-link': AnimatedLineBeneathLink;
-    'avatar-component': AvatarComponent;
-    'checkmark-component': CheckmarkComponent;
-    'data-fetcher': DataFetcher;
-    'emoji-checkbox-component': EmojiCheckboxComponent;
-    'flowing-colored-border-button': FlowingColoredBorderButton;
-    'google-tag-manager': GoogleTagManager;
-    'hero-component': HeroComponent;
-    'image-component': ImageComponent;
-    'label-component': LabelComponent;
-    'modal-window': ModalWindow;
-    'my-button': MyButton;
-    'my-component': MyComponent;
-    'my-input': MyInput;
-    'search-box': SearchBox;
-    'tooltip-component': TooltipComponent;
-  }
+    interface AlertComponent {
+        "action"?: string;
+        "icon"?: string;
+        "text"?: string;
+        "variant"?: string;
+        "width"?: string;
+    }
+    interface AnimatedLineBeneathLink {
+        "text"?: string;
+    }
+    interface AvatarComponent {
+        /**
+          * Alternate text when src image breaks
+          * @type {string}
+          * @memberof AvatarComponent
+         */
+        "alt"?: string;
+        /**
+          * Custom class for the image
+          * @type {string}
+          * @memberof AvatarComponent
+         */
+        "customClass"?: string;
+        /**
+          * Avatar image size
+          * @type {('small' | 'medium' | 'large')}
+          * @memberof AvatarComponent
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * Image source url
+          * @type {string}
+          * @memberof AvatarComponent
+         */
+        "src"?: string;
+        /**
+          * Show title of the image on hover
+          * @type {string}
+          * @memberof AvatarComponent
+         */
+        "tooltipTxt"?: string;
+        /**
+          * Avatar image shape variants
+          * @type {('circular' | 'rounded' | 'square')}
+          * @memberof AvatarComponent
+         */
+        "variant"?: 'circular' | 'rounded' | 'square';
+    }
+    interface BreakComponent {
+        "horizontalDistance"?: string;
+        "type"?: string;
+        "verticalDistance"?: string;
+    }
+    interface CheckmarkComponent {
+        /**
+          * Un-checked state emoji HEX code
+         */
+        "checkFalse"?: string;
+        /**
+          * Checked state emoji HEX code
+         */
+        "checkTrue"?: string;
+        /**
+          * Checkbox state
+         */
+        "checked"?: boolean;
+    }
+    interface DataFetcher {
+    }
+    interface EmojiCheckboxComponent {
+        /**
+          * The initial state of checkbox
+         */
+        "checked"?: boolean;
+        /**
+          * Checkbox name
+         */
+        "name"?: string;
+    }
+    interface FlowingColoredBorderButton {
+    }
+    interface GoogleTagManager {
+        /**
+          * The google tag manage container ID
+         */
+        "containerId"?: string;
+    }
+    interface HamburgerMenu {
+    }
+    interface HeroComponent {
+        "background"?: string;
+        "heading"?: string;
+        "height"?: string;
+        "imgurl"?: string;
+        "width"?: string;
+    }
+    interface IconComponent {
+        "background"?: string;
+        "bordercolor"?: string;
+        "bordersize"?: string;
+        "bordertype"?: string;
+        "hovercolorbg"?: string;
+        "hovercolorprimary"?: string;
+        "label"?: string;
+        "name"?: string;
+        "primarycolor"?: string;
+        "size"?: string;
+        "tooltip"?: string;
+        "tooltippos"?: string;
+    }
+    interface ImageComponent {
+        "srcImg"?: string;
+        "srcImgName"?: string;
+        "srcNextGen"?: string;
+    }
+    interface LabelComponent {
+        /**
+          * Checkbox state
+         */
+        "checked"?: boolean;
+    }
+    interface ModalWindow {
+        "cancelText"?: string;
+        "confirmText"?: string;
+        "handleCancel"?: Function;
+        "handleConfirm"?: Function;
+        "heading"?: string;
+        "pointerEvents"?: boolean;
+    }
+    interface MyButton {
+        "color"?: string;
+        "icon"?: string;
+        "name"?: string;
+        "type"?: string;
+        "typeButton"?: string;
+        "width"?: string;
+    }
+    interface MyComponent {
+        /**
+          * The text color
+         */
+        "color"?: string;
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
+    interface MyInput {
+        "bordered"?: boolean;
+        "defaultValue"?: string;
+        "disabled"?: boolean;
+        "pattern"?: string;
+        "placeholder"?: string;
+        "size"?: string;
+    }
+    interface NotificationBadge {
+        "totalNotifications"?: string;
+    }
+    interface SearchBox {
+        "autocomplete"?: boolean;
+        "dark"?: boolean;
+        "maxLength"?: number;
+        "method"?: string;
+        "placeholder"?: string;
+        "queryURL"?: string;
+        "rectangle"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
+    }
+    interface SignInForm {
+        "className"?: string;
+        "maxLengthEmail"?: string;
+        "maxLengthPassword"?: string;
+        "minLengthEmail"?: string;
+        "minLengthPassword"?: string;
+    }
+    interface TextStyle {
+        "bold"?: string;
+        "className"?: string;
+        "fontWeight"?: string;
+        "italic"?: string;
+    }
+    interface ToastNotify {
+        "Heading"?: string;
+        "indicationIcon"?: string;
+    }
+    interface TooltipComponent {
+        /**
+          * Background color
+         */
+        "backgroundColor"?: string;
+        /**
+          * Text color
+         */
+        "color"?: string;
+        /**
+          * Font size
+         */
+        "fontSize"?: string;
+        /**
+          * Position of tooltip. left, right, top, bottom
+         */
+        "position"?: string;
+        /**
+          * Text to be displayed in the tooltip
+         */
+        "text"?: string;
+    }
+    interface IntrinsicElements {
+        "alert-component": AlertComponent;
+        "animated-line-beneath-link": AnimatedLineBeneathLink;
+        "avatar-component": AvatarComponent;
+        "break-component": BreakComponent;
+        "checkmark-component": CheckmarkComponent;
+        "data-fetcher": DataFetcher;
+        "emoji-checkbox-component": EmojiCheckboxComponent;
+        "flowing-colored-border-button": FlowingColoredBorderButton;
+        "google-tag-manager": GoogleTagManager;
+        "hamburger-menu": HamburgerMenu;
+        "hero-component": HeroComponent;
+        "icon-component": IconComponent;
+        "image-component": ImageComponent;
+        "label-component": LabelComponent;
+        "modal-window": ModalWindow;
+        "my-button": MyButton;
+        "my-component": MyComponent;
+        "my-input": MyInput;
+        "notification-badge": NotificationBadge;
+        "search-box": SearchBox;
+        "sign-in-form": SignInForm;
+        "text-style": TextStyle;
+        "toast-notify": ToastNotify;
+        "tooltip-component": TooltipComponent;
+    }
 }
 export { LocalJSX as JSX };
-declare module '@stencil/core' {
-  export namespace JSX {
-    interface IntrinsicElements {
-      'alert-component': LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
-      'animated-line-beneath-link': LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
-      'avatar-component': LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
-      'checkmark-component': LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
-      'data-fetcher': LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
-      'emoji-checkbox-component': LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
-      'flowing-colored-border-button': LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
-      'google-tag-manager': LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
-      'hero-component': LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
-      'image-component': LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
-      'label-component': LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
-      'modal-window': LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
-      'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-      'my-input': LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
-      'search-box': LocalJSX.SearchBox & JSXBase.HTMLAttributes<HTMLSearchBoxElement>;
-      'tooltip-component': LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
+declare module "@stencil/core" {
+    export namespace JSX {
+        interface IntrinsicElements {
+            "alert-component": LocalJSX.AlertComponent & JSXBase.HTMLAttributes<HTMLAlertComponentElement>;
+            "animated-line-beneath-link": LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
+            "avatar-component": LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
+            "break-component": LocalJSX.BreakComponent & JSXBase.HTMLAttributes<HTMLBreakComponentElement>;
+            "checkmark-component": LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
+            "data-fetcher": LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
+            "emoji-checkbox-component": LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
+            "flowing-colored-border-button": LocalJSX.FlowingColoredBorderButton & JSXBase.HTMLAttributes<HTMLFlowingColoredBorderButtonElement>;
+            "google-tag-manager": LocalJSX.GoogleTagManager & JSXBase.HTMLAttributes<HTMLGoogleTagManagerElement>;
+            "hamburger-menu": LocalJSX.HamburgerMenu & JSXBase.HTMLAttributes<HTMLHamburgerMenuElement>;
+            "hero-component": LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
+            "icon-component": LocalJSX.IconComponent & JSXBase.HTMLAttributes<HTMLIconComponentElement>;
+            "image-component": LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
+            "label-component": LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
+            "modal-window": LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
+            "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
+            "notification-badge": LocalJSX.NotificationBadge & JSXBase.HTMLAttributes<HTMLNotificationBadgeElement>;
+            "search-box": LocalJSX.SearchBox & JSXBase.HTMLAttributes<HTMLSearchBoxElement>;
+            "sign-in-form": LocalJSX.SignInForm & JSXBase.HTMLAttributes<HTMLSignInFormElement>;
+            "text-style": LocalJSX.TextStyle & JSXBase.HTMLAttributes<HTMLTextStyleElement>;
+            "toast-notify": LocalJSX.ToastNotify & JSXBase.HTMLAttributes<HTMLToastNotifyElement>;
+            "tooltip-component": LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
+        }
     }
-  }
 }

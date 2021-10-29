@@ -94,7 +94,7 @@ export class SearchBox {
 
   render() {
     return (
-      <form action={this.queryURL} method={this.method} role="search" class={this.size}>
+      <form action={this.queryURL} method={this.method} role="search" class={`${this.size} ${this.dark ? 'dark' : 'light'}`}>
         <div
           class={`container ${this.rectangle ? 'rectangle' : 'rounded'} ${this.active || this.showSuggestions ? 'active' : ''} ${
             this.showSuggestions ? 'remove-bottom-radius' : ''
