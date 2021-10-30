@@ -5,6 +5,7 @@
 <!-- Auto Generated Below -->
 
 
+
 ## Properties
 
 | Property             | Attribute             | Description | Type     | Default     |
@@ -14,6 +15,5 @@
 | `verticalDistance`   | `vertical-distance`   |             | `string` | `undefined` |
 
 
-----------------------------------------------
-
 *Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
+

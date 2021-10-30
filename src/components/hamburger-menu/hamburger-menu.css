@@ -14,7 +14,9 @@
 
 #nav-main img {
   display: block;
+
   width: 125px;
+
   object-fit: cover;
   position: absolute;
   margin-left: 20px;
@@ -124,6 +126,10 @@
     text-align: center;
   }
 
+  #nav-main ul li {
+    margin-left: 70px;
+  }
+
   #nav-main ul li :hover {
     background-color: #54577c;
     opacity: 0.9;
@@ -138,6 +144,9 @@
   }
 
   #check:checked ~ #nav-main {
-    height: 15vh;
+    height: 13vh;
+  }
+  #check:checked ~ #nav-main ul {
+    display: none;
   }
 }

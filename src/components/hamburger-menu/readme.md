@@ -1,7 +1,6 @@
 # hamburger-menu
 
 
-
 <!-- Auto Generated Below -->
 
 
@@ -12,6 +11,8 @@
 - [animated-line-beneath-link](../animated-line-beneath-link)
 
 ### Graph
+
+
 ```mermaid
 graph TD;
   hamburger-menu --> animated-line-beneath-link

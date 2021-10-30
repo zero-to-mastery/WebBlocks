@@ -23,6 +23,7 @@ export class HamburgerMenu {
           </label>
 
           <img src="../assets/img/logo_transparent.png" alt="Logo" width="150" height="100" />
+
           <ul>
             <li>
               <animated-line-beneath-link text="Home"></animated-line-beneath-link>
