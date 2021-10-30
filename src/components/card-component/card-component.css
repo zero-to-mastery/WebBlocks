@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.img_container {
+  width: 284px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.img_container img {
+  width: 284px;
+}
+
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 17.875rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.card img {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card_body {
+  padding: 1rem;
+}
+
+.card_body h3 {
+  margin-top: 0.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.card_body p {
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.product {
+  text-align: center;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
