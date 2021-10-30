@@ -1,9 +1,6 @@
 # sign-in-form
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -15,7 +12,4 @@
 | `minLengthEmail`    | `min-length-email`    |             | `string` | `undefined` |
 | `minLengthPassword` | `min-length-password` |             | `string` | `undefined` |
 
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
+_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_

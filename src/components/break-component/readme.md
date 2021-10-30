@@ -1,9 +1,6 @@
 # break-component
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,7 +10,14 @@
 | `type`               | `type`                |             | `string` | `undefined` |
 | `verticalDistance`   | `vertical-distance`   |             | `string` | `undefined` |
 
+<<<<<<< HEAD
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community*
+# _Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+
+---
+
+_Built with [StencilJS](https://stenciljs.com/) by the [ZTM](https://zerotomastery.io/) community_
+
+> > > > > > > 57992c79dcd5bfa494a7ef2b0ca504df91ac8f68

@@ -59,6 +59,12 @@ export namespace Components {
         "type": string;
         "verticalDistance": string;
     }
+    interface CardComponent {
+        "cardtitle": string;
+        "imageURL": string;
+        "price": string;
+        "text": string;
+    }
     interface CheckmarkComponent {
         /**
           * Un-checked state emoji HEX code
@@ -121,6 +127,9 @@ export namespace Components {
         "srcImgName": string;
         "srcNextGen": string;
     }
+    interface ImageModalComponent {
+        "open": (url: any) => Promise<void>;
+    }
     interface LabelComponent {
         /**
           * Checkbox state
@@ -172,12 +181,33 @@ export namespace Components {
     interface NotificationBadge {
         "totalNotifications": string;
     }
+    interface ReviewComponent {
+        "productname": string;
+        "rating": number;
+        "username": string;
+    }
+    interface SearchBox {
+        "autocomplete": boolean;
+        "dark": boolean;
+        "maxLength": number;
+        "method": string;
+        "placeholder": string;
+        "queryURL": string;
+        "rectangle": boolean;
+        "size": 'sm' | 'md' | 'lg';
+    }
     interface SignInForm {
         "className": string;
         "maxLengthEmail": string;
         "maxLengthPassword": string;
         "minLengthEmail": string;
         "minLengthPassword": string;
+    }
+    interface TextStyle {
+        "bold": string;
+        "className": string;
+        "fontWeight": string;
+        "italic": string;
     }
     interface ToastNotify {
         "Heading": string;
@@ -230,6 +260,12 @@ declare global {
     var HTMLBreakComponentElement: {
         prototype: HTMLBreakComponentElement;
         new (): HTMLBreakComponentElement;
+    };
+    interface HTMLCardComponentElement extends Components.CardComponent, HTMLStencilElement {
+    }
+    var HTMLCardComponentElement: {
+        prototype: HTMLCardComponentElement;
+        new (): HTMLCardComponentElement;
     };
     interface HTMLCheckmarkComponentElement extends Components.CheckmarkComponent, HTMLStencilElement {
     }
@@ -285,6 +321,12 @@ declare global {
         prototype: HTMLImageComponentElement;
         new (): HTMLImageComponentElement;
     };
+    interface HTMLImageModalComponentElement extends Components.ImageModalComponent, HTMLStencilElement {
+    }
+    var HTMLImageModalComponentElement: {
+        prototype: HTMLImageModalComponentElement;
+        new (): HTMLImageModalComponentElement;
+    };
     interface HTMLLabelComponentElement extends Components.LabelComponent, HTMLStencilElement {
     }
     var HTMLLabelComponentElement: {
@@ -321,11 +363,29 @@ declare global {
         prototype: HTMLNotificationBadgeElement;
         new (): HTMLNotificationBadgeElement;
     };
+    interface HTMLReviewComponentElement extends Components.ReviewComponent, HTMLStencilElement {
+    }
+    var HTMLReviewComponentElement: {
+        prototype: HTMLReviewComponentElement;
+        new (): HTMLReviewComponentElement;
+    };
+    interface HTMLSearchBoxElement extends Components.SearchBox, HTMLStencilElement {
+    }
+    var HTMLSearchBoxElement: {
+        prototype: HTMLSearchBoxElement;
+        new (): HTMLSearchBoxElement;
+    };
     interface HTMLSignInFormElement extends Components.SignInForm, HTMLStencilElement {
     }
     var HTMLSignInFormElement: {
         prototype: HTMLSignInFormElement;
         new (): HTMLSignInFormElement;
+    };
+    interface HTMLTextStyleElement extends Components.TextStyle, HTMLStencilElement {
+    }
+    var HTMLTextStyleElement: {
+        prototype: HTMLTextStyleElement;
+        new (): HTMLTextStyleElement;
     };
     interface HTMLToastNotifyElement extends Components.ToastNotify, HTMLStencilElement {
     }
@@ -344,6 +404,7 @@ declare global {
         "animated-line-beneath-link": HTMLAnimatedLineBeneathLinkElement;
         "avatar-component": HTMLAvatarComponentElement;
         "break-component": HTMLBreakComponentElement;
+        "card-component": HTMLCardComponentElement;
         "checkmark-component": HTMLCheckmarkComponentElement;
         "data-fetcher": HTMLDataFetcherElement;
         "emoji-checkbox-component": HTMLEmojiCheckboxComponentElement;
@@ -353,13 +414,17 @@ declare global {
         "hero-component": HTMLHeroComponentElement;
         "icon-component": HTMLIconComponentElement;
         "image-component": HTMLImageComponentElement;
+        "image-modal-component": HTMLImageModalComponentElement;
         "label-component": HTMLLabelComponentElement;
         "modal-window": HTMLModalWindowElement;
         "my-button": HTMLMyButtonElement;
         "my-component": HTMLMyComponentElement;
         "my-input": HTMLMyInputElement;
         "notification-badge": HTMLNotificationBadgeElement;
+        "review-component": HTMLReviewComponentElement;
+        "search-box": HTMLSearchBoxElement;
         "sign-in-form": HTMLSignInFormElement;
+        "text-style": HTMLTextStyleElement;
         "toast-notify": HTMLToastNotifyElement;
         "tooltip-component": HTMLTooltipComponentElement;
     }
@@ -417,6 +482,12 @@ declare namespace LocalJSX {
         "horizontalDistance"?: string;
         "type"?: string;
         "verticalDistance"?: string;
+    }
+    interface CardComponent {
+        "cardtitle"?: string;
+        "imageURL"?: string;
+        "price"?: string;
+        "text"?: string;
     }
     interface CheckmarkComponent {
         /**
@@ -480,6 +551,8 @@ declare namespace LocalJSX {
         "srcImgName"?: string;
         "srcNextGen"?: string;
     }
+    interface ImageModalComponent {
+    }
     interface LabelComponent {
         /**
           * Checkbox state
@@ -531,12 +604,33 @@ declare namespace LocalJSX {
     interface NotificationBadge {
         "totalNotifications"?: string;
     }
+    interface ReviewComponent {
+        "productname"?: string;
+        "rating"?: number;
+        "username"?: string;
+    }
+    interface SearchBox {
+        "autocomplete"?: boolean;
+        "dark"?: boolean;
+        "maxLength"?: number;
+        "method"?: string;
+        "placeholder"?: string;
+        "queryURL"?: string;
+        "rectangle"?: boolean;
+        "size"?: 'sm' | 'md' | 'lg';
+    }
     interface SignInForm {
         "className"?: string;
         "maxLengthEmail"?: string;
         "maxLengthPassword"?: string;
         "minLengthEmail"?: string;
         "minLengthPassword"?: string;
+    }
+    interface TextStyle {
+        "bold"?: string;
+        "className"?: string;
+        "fontWeight"?: string;
+        "italic"?: string;
     }
     interface ToastNotify {
         "Heading"?: string;
@@ -569,6 +663,7 @@ declare namespace LocalJSX {
         "animated-line-beneath-link": AnimatedLineBeneathLink;
         "avatar-component": AvatarComponent;
         "break-component": BreakComponent;
+        "card-component": CardComponent;
         "checkmark-component": CheckmarkComponent;
         "data-fetcher": DataFetcher;
         "emoji-checkbox-component": EmojiCheckboxComponent;
@@ -578,13 +673,17 @@ declare namespace LocalJSX {
         "hero-component": HeroComponent;
         "icon-component": IconComponent;
         "image-component": ImageComponent;
+        "image-modal-component": ImageModalComponent;
         "label-component": LabelComponent;
         "modal-window": ModalWindow;
         "my-button": MyButton;
         "my-component": MyComponent;
         "my-input": MyInput;
         "notification-badge": NotificationBadge;
+        "review-component": ReviewComponent;
+        "search-box": SearchBox;
         "sign-in-form": SignInForm;
+        "text-style": TextStyle;
         "toast-notify": ToastNotify;
         "tooltip-component": TooltipComponent;
     }
@@ -597,6 +696,7 @@ declare module "@stencil/core" {
             "animated-line-beneath-link": LocalJSX.AnimatedLineBeneathLink & JSXBase.HTMLAttributes<HTMLAnimatedLineBeneathLinkElement>;
             "avatar-component": LocalJSX.AvatarComponent & JSXBase.HTMLAttributes<HTMLAvatarComponentElement>;
             "break-component": LocalJSX.BreakComponent & JSXBase.HTMLAttributes<HTMLBreakComponentElement>;
+            "card-component": LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
             "checkmark-component": LocalJSX.CheckmarkComponent & JSXBase.HTMLAttributes<HTMLCheckmarkComponentElement>;
             "data-fetcher": LocalJSX.DataFetcher & JSXBase.HTMLAttributes<HTMLDataFetcherElement>;
             "emoji-checkbox-component": LocalJSX.EmojiCheckboxComponent & JSXBase.HTMLAttributes<HTMLEmojiCheckboxComponentElement>;
@@ -606,13 +706,17 @@ declare module "@stencil/core" {
             "hero-component": LocalJSX.HeroComponent & JSXBase.HTMLAttributes<HTMLHeroComponentElement>;
             "icon-component": LocalJSX.IconComponent & JSXBase.HTMLAttributes<HTMLIconComponentElement>;
             "image-component": LocalJSX.ImageComponent & JSXBase.HTMLAttributes<HTMLImageComponentElement>;
+            "image-modal-component": LocalJSX.ImageModalComponent & JSXBase.HTMLAttributes<HTMLImageModalComponentElement>;
             "label-component": LocalJSX.LabelComponent & JSXBase.HTMLAttributes<HTMLLabelComponentElement>;
             "modal-window": LocalJSX.ModalWindow & JSXBase.HTMLAttributes<HTMLModalWindowElement>;
             "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
             "notification-badge": LocalJSX.NotificationBadge & JSXBase.HTMLAttributes<HTMLNotificationBadgeElement>;
+            "review-component": LocalJSX.ReviewComponent & JSXBase.HTMLAttributes<HTMLReviewComponentElement>;
+            "search-box": LocalJSX.SearchBox & JSXBase.HTMLAttributes<HTMLSearchBoxElement>;
             "sign-in-form": LocalJSX.SignInForm & JSXBase.HTMLAttributes<HTMLSignInFormElement>;
+            "text-style": LocalJSX.TextStyle & JSXBase.HTMLAttributes<HTMLTextStyleElement>;
             "toast-notify": LocalJSX.ToastNotify & JSXBase.HTMLAttributes<HTMLToastNotifyElement>;
             "tooltip-component": LocalJSX.TooltipComponent & JSXBase.HTMLAttributes<HTMLTooltipComponentElement>;
         }

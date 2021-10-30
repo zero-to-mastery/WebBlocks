@@ -57,7 +57,7 @@ to
 *.js and *.jsx
 ```
 
-This project makes use of `"checkJs": false` in the tsconig.json file which makes sure that nasty typescript errors do not fire up with common js and jsx files.
+This project makes use of `"checkJs": false` in the tsconfig.json file which makes sure that nasty typescript errors do not fire up with common js and jsx files.
 
 ## Work on the project locally
 

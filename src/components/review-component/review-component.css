@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+.review,
+.review > * {
+  box-sizing: border-box;
+}
+
+.review {
+  display: flex;
+  max-width: 50rem;
+  border: 3px solid black;
+  border-radius: 0.35rem;
+  padding: 1rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  background: #fafafa;
+  margin-top: 2rem;
+}
+
+.review-panel {
+  order: 2;
+  flex-basis: 75%;
+}
+
+.review-title,
+.review-content,
+.review-tags,
+.review-product,
+.review-images,
+.user-details-panel p {
+  margin: 0;
+}
+
+.review-title {
+  font-weight: 700;
+  color: #152d35;
+  margin-bottom: 0.5rem;
+}
+
+.review-product {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-name {
+  color: #152d35;
+  font-weight: 700;
+}
+
+.review-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #152d35;
+  background: #d1e8e4;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.tag + .tag {
+  margin-left: 1rem;
+}
+
+.review-content {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+ul.review-content,
+ol.review-content {
+  margin: 0.25rem 0 1rem 0;
+}
+
+.review-images {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.review-images img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border: 2px dashed #333;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.review-images li + li {
+  margin-left: 1rem;
+}
+
+.user-details-panel {
+  flex-basis: 25%;
+}
+
+.user-details-panel .img {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 2rem;
+}
+
+.user-details-panel .img svg {
+  color: #476072;
+}
+
+.user-details-panel p,
+.user-details-panel time {
+  font-weight: 700;
+}
+
+.user-details-panel p {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.star-bg {
+  width: 22px;
+  height: 22px;
+  background: #eee;
+  position: relative;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  overflow: hidden;
+}
+
+.star-child {
+  background: #ffb319;
+  position: relative;
+}
+
+.star + .star {
+  margin-left: 1rem;
+}
