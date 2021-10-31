@@ -14,7 +14,9 @@
 
 #nav-main img {
   display: block;
-  width: 150px;
+
+  width: 125px;
+
   object-fit: cover;
   position: absolute;
   margin-left: 20px;
@@ -59,10 +61,9 @@
 #bars,
 #cancel {
   color: white;
-  font-size: 50px;
+  font-size: 30px;
   float: right;
   margin-right: 20px;
-  margin-bottom: 30px; 
   cursor: pointer;
   display: none;
 }
@@ -91,12 +92,13 @@
 @media (max-width: 860px) {
   #nav-main img {
     left: 6%;
-    width: 180px;
-    margin-top: 13px;
+    width: 150px;
   }
 
   #bars {
     display: block;
+    margin-right: 20px;
+    font-size: 3rem;
   }
 
   #nav-main {
