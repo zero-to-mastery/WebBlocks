@@ -64,6 +64,10 @@
   font-size: 30px;
   float: right;
   margin-right: 20px;
+<<<<<<< HEAD
+  margin-bottom: 30px;
+=======
+>>>>>>> 656732c19b6bf88235c43acb29466796798601fe
   cursor: pointer;
   display: none;
 }
